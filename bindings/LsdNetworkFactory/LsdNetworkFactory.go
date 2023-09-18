@@ -42,7 +42,7 @@ type ILsdNetworkFactoryNetworkContracts struct {
 
 // LsdNetworkFactoryMetaData contains all meta data concerning the LsdNetworkFactory contract.
 var LsdNetworkFactoryMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_factoryAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_ethDepositAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_feePoolLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structILsdNetworkFactory.NetworkContracts\",\"name\":\"_contracts\",\"type\":\"tuple\"}],\"name\":\"LsdNetwork\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_proxyAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkAdmin\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"createLsdNetwork\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ethDepositAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"factoryAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"factoryClaim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feePoolLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkBalancesLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"networkContractsOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkProposalLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkWithdrawLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nodeDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkBalancesLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkProposalLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkWithdrawLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setNodeDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setUserDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"userDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[],\"name\":\"AddressNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyClaimed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedEpoch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedHeight\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyInitialized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyNotifyCycle\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyVoted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountNotZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BalanceNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BlockNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CallerNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableDepositZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableRewardZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CycleNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DepositAmountLTMinAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EthAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToTransfer\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMerkleProof\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidThreshold\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LengthNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LightNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LsdTokenAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyRemoved\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotFactoryAdmin\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotNetworkAdmin\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPubkeyOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotTrustNode\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProposalAlreadyExecuted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyStatusUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RateChangeOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReachCycleWithdrawLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReachPubkeyNumberLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReachUserWithdrawLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SubmitBalancesDisable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TrustNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UserDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VoterNumberOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexEmpty\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexOver\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structILsdNetworkFactory.NetworkContracts\",\"name\":\"_contracts\",\"type\":\"tuple\"}],\"name\":\"LsdNetwork\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_proxyAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkAdmin\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"createLsdNetwork\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ethDepositAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"factoryAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"factoryClaim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feePoolLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_factoryAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_ethDepositAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_feePoolLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"initialized\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"lsdTokensOfCreater\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkBalancesLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"networkContractsOfLsdToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkProposalLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkWithdrawLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nodeDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkBalancesLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkProposalLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkWithdrawLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setNodeDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setUserDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"userDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // LsdNetworkFactoryABI is the input ABI used to generate the binding from.
@@ -284,6 +284,68 @@ func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) FeePoolLogicAddress() 
 	return _LsdNetworkFactory.Contract.FeePoolLogicAddress(&_LsdNetworkFactory.CallOpts)
 }
 
+// Initialized is a free data retrieval call binding the contract method 0x158ef93e.
+//
+// Solidity: function initialized() view returns(bool)
+func (_LsdNetworkFactory *LsdNetworkFactoryCaller) Initialized(opts *bind.CallOpts) (bool, error) {
+	var out []interface{}
+	err := _LsdNetworkFactory.contract.Call(opts, &out, "initialized")
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// Initialized is a free data retrieval call binding the contract method 0x158ef93e.
+//
+// Solidity: function initialized() view returns(bool)
+func (_LsdNetworkFactory *LsdNetworkFactorySession) Initialized() (bool, error) {
+	return _LsdNetworkFactory.Contract.Initialized(&_LsdNetworkFactory.CallOpts)
+}
+
+// Initialized is a free data retrieval call binding the contract method 0x158ef93e.
+//
+// Solidity: function initialized() view returns(bool)
+func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) Initialized() (bool, error) {
+	return _LsdNetworkFactory.Contract.Initialized(&_LsdNetworkFactory.CallOpts)
+}
+
+// LsdTokensOfCreater is a free data retrieval call binding the contract method 0x2c429e66.
+//
+// Solidity: function lsdTokensOfCreater(address , uint256 ) view returns(address)
+func (_LsdNetworkFactory *LsdNetworkFactoryCaller) LsdTokensOfCreater(opts *bind.CallOpts, arg0 common.Address, arg1 *big.Int) (common.Address, error) {
+	var out []interface{}
+	err := _LsdNetworkFactory.contract.Call(opts, &out, "lsdTokensOfCreater", arg0, arg1)
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// LsdTokensOfCreater is a free data retrieval call binding the contract method 0x2c429e66.
+//
+// Solidity: function lsdTokensOfCreater(address , uint256 ) view returns(address)
+func (_LsdNetworkFactory *LsdNetworkFactorySession) LsdTokensOfCreater(arg0 common.Address, arg1 *big.Int) (common.Address, error) {
+	return _LsdNetworkFactory.Contract.LsdTokensOfCreater(&_LsdNetworkFactory.CallOpts, arg0, arg1)
+}
+
+// LsdTokensOfCreater is a free data retrieval call binding the contract method 0x2c429e66.
+//
+// Solidity: function lsdTokensOfCreater(address , uint256 ) view returns(address)
+func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) LsdTokensOfCreater(arg0 common.Address, arg1 *big.Int) (common.Address, error) {
+	return _LsdNetworkFactory.Contract.LsdTokensOfCreater(&_LsdNetworkFactory.CallOpts, arg0, arg1)
+}
+
 // NetworkBalancesLogicAddress is a free data retrieval call binding the contract method 0xc0c66c3d.
 //
 // Solidity: function networkBalancesLogicAddress() view returns(address)
@@ -315,10 +377,10 @@ func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) NetworkBalancesLogicAd
 	return _LsdNetworkFactory.Contract.NetworkBalancesLogicAddress(&_LsdNetworkFactory.CallOpts)
 }
 
-// NetworkContractsOf is a free data retrieval call binding the contract method 0x32b73bb2.
+// NetworkContractsOfLsdToken is a free data retrieval call binding the contract method 0x89e56b80.
 //
-// Solidity: function networkContractsOf(address ) view returns(address _feePool, address _networkBalances, address _networkProposal, address _nodeDeposit, address _userDeposit, address _networkWithdraw, address _lsdToken, uint256 _block)
-func (_LsdNetworkFactory *LsdNetworkFactoryCaller) NetworkContractsOf(opts *bind.CallOpts, arg0 common.Address) (struct {
+// Solidity: function networkContractsOfLsdToken(address ) view returns(address _feePool, address _networkBalances, address _networkProposal, address _nodeDeposit, address _userDeposit, address _networkWithdraw, address _lsdToken, uint256 _block)
+func (_LsdNetworkFactory *LsdNetworkFactoryCaller) NetworkContractsOfLsdToken(opts *bind.CallOpts, arg0 common.Address) (struct {
 	FeePool         common.Address
 	NetworkBalances common.Address
 	NetworkProposal common.Address
@@ -329,7 +391,7 @@ func (_LsdNetworkFactory *LsdNetworkFactoryCaller) NetworkContractsOf(opts *bind
 	Block           *big.Int
 }, error) {
 	var out []interface{}
-	err := _LsdNetworkFactory.contract.Call(opts, &out, "networkContractsOf", arg0)
+	err := _LsdNetworkFactory.contract.Call(opts, &out, "networkContractsOfLsdToken", arg0)
 
 	outstruct := new(struct {
 		FeePool         common.Address
@@ -358,10 +420,10 @@ func (_LsdNetworkFactory *LsdNetworkFactoryCaller) NetworkContractsOf(opts *bind
 
 }
 
-// NetworkContractsOf is a free data retrieval call binding the contract method 0x32b73bb2.
+// NetworkContractsOfLsdToken is a free data retrieval call binding the contract method 0x89e56b80.
 //
-// Solidity: function networkContractsOf(address ) view returns(address _feePool, address _networkBalances, address _networkProposal, address _nodeDeposit, address _userDeposit, address _networkWithdraw, address _lsdToken, uint256 _block)
-func (_LsdNetworkFactory *LsdNetworkFactorySession) NetworkContractsOf(arg0 common.Address) (struct {
+// Solidity: function networkContractsOfLsdToken(address ) view returns(address _feePool, address _networkBalances, address _networkProposal, address _nodeDeposit, address _userDeposit, address _networkWithdraw, address _lsdToken, uint256 _block)
+func (_LsdNetworkFactory *LsdNetworkFactorySession) NetworkContractsOfLsdToken(arg0 common.Address) (struct {
 	FeePool         common.Address
 	NetworkBalances common.Address
 	NetworkProposal common.Address
@@ -371,13 +433,13 @@ func (_LsdNetworkFactory *LsdNetworkFactorySession) NetworkContractsOf(arg0 comm
 	LsdToken        common.Address
 	Block           *big.Int
 }, error) {
-	return _LsdNetworkFactory.Contract.NetworkContractsOf(&_LsdNetworkFactory.CallOpts, arg0)
+	return _LsdNetworkFactory.Contract.NetworkContractsOfLsdToken(&_LsdNetworkFactory.CallOpts, arg0)
 }
 
-// NetworkContractsOf is a free data retrieval call binding the contract method 0x32b73bb2.
+// NetworkContractsOfLsdToken is a free data retrieval call binding the contract method 0x89e56b80.
 //
-// Solidity: function networkContractsOf(address ) view returns(address _feePool, address _networkBalances, address _networkProposal, address _nodeDeposit, address _userDeposit, address _networkWithdraw, address _lsdToken, uint256 _block)
-func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) NetworkContractsOf(arg0 common.Address) (struct {
+// Solidity: function networkContractsOfLsdToken(address ) view returns(address _feePool, address _networkBalances, address _networkProposal, address _nodeDeposit, address _userDeposit, address _networkWithdraw, address _lsdToken, uint256 _block)
+func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) NetworkContractsOfLsdToken(arg0 common.Address) (struct {
 	FeePool         common.Address
 	NetworkBalances common.Address
 	NetworkProposal common.Address
@@ -387,7 +449,7 @@ func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) NetworkContractsOf(arg
 	LsdToken        common.Address
 	Block           *big.Int
 }, error) {
-	return _LsdNetworkFactory.Contract.NetworkContractsOf(&_LsdNetworkFactory.CallOpts, arg0)
+	return _LsdNetworkFactory.Contract.NetworkContractsOfLsdToken(&_LsdNetworkFactory.CallOpts, arg0)
 }
 
 // NetworkProposalLogicAddress is a free data retrieval call binding the contract method 0x7a3ddd32.
@@ -585,6 +647,27 @@ func (_LsdNetworkFactory *LsdNetworkFactorySession) FactoryClaim(_recipient comm
 // Solidity: function factoryClaim(address _recipient) returns()
 func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) FactoryClaim(_recipient common.Address) (*types.Transaction, error) {
 	return _LsdNetworkFactory.Contract.FactoryClaim(&_LsdNetworkFactory.TransactOpts, _recipient)
+}
+
+// Init is a paid mutator transaction binding the contract method 0x525240c0.
+//
+// Solidity: function init(address _factoryAdmin, address _ethDepositAddress, address _feePoolLogicAddress, address _networkBalancesLogicAddress, address _networkProposalLogicAddress, address _nodeDepositLogicAddress, address _userDepositLogicAddress, address _networkWithdrawLogicAddress) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) Init(opts *bind.TransactOpts, _factoryAdmin common.Address, _ethDepositAddress common.Address, _feePoolLogicAddress common.Address, _networkBalancesLogicAddress common.Address, _networkProposalLogicAddress common.Address, _nodeDepositLogicAddress common.Address, _userDepositLogicAddress common.Address, _networkWithdrawLogicAddress common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "init", _factoryAdmin, _ethDepositAddress, _feePoolLogicAddress, _networkBalancesLogicAddress, _networkProposalLogicAddress, _nodeDepositLogicAddress, _userDepositLogicAddress, _networkWithdrawLogicAddress)
+}
+
+// Init is a paid mutator transaction binding the contract method 0x525240c0.
+//
+// Solidity: function init(address _factoryAdmin, address _ethDepositAddress, address _feePoolLogicAddress, address _networkBalancesLogicAddress, address _networkProposalLogicAddress, address _nodeDepositLogicAddress, address _userDepositLogicAddress, address _networkWithdrawLogicAddress) returns()
+func (_LsdNetworkFactory *LsdNetworkFactorySession) Init(_factoryAdmin common.Address, _ethDepositAddress common.Address, _feePoolLogicAddress common.Address, _networkBalancesLogicAddress common.Address, _networkProposalLogicAddress common.Address, _nodeDepositLogicAddress common.Address, _userDepositLogicAddress common.Address, _networkWithdrawLogicAddress common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.Init(&_LsdNetworkFactory.TransactOpts, _factoryAdmin, _ethDepositAddress, _feePoolLogicAddress, _networkBalancesLogicAddress, _networkProposalLogicAddress, _nodeDepositLogicAddress, _userDepositLogicAddress, _networkWithdrawLogicAddress)
+}
+
+// Init is a paid mutator transaction binding the contract method 0x525240c0.
+//
+// Solidity: function init(address _factoryAdmin, address _ethDepositAddress, address _feePoolLogicAddress, address _networkBalancesLogicAddress, address _networkProposalLogicAddress, address _nodeDepositLogicAddress, address _userDepositLogicAddress, address _networkWithdrawLogicAddress) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) Init(_factoryAdmin common.Address, _ethDepositAddress common.Address, _feePoolLogicAddress common.Address, _networkBalancesLogicAddress common.Address, _networkProposalLogicAddress common.Address, _nodeDepositLogicAddress common.Address, _userDepositLogicAddress common.Address, _networkWithdrawLogicAddress common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.Init(&_LsdNetworkFactory.TransactOpts, _factoryAdmin, _ethDepositAddress, _feePoolLogicAddress, _networkBalancesLogicAddress, _networkProposalLogicAddress, _nodeDepositLogicAddress, _userDepositLogicAddress, _networkWithdrawLogicAddress)
 }
 
 // SetNetworkBalancesLogicAddress is a paid mutator transaction binding the contract method 0xc083f1c2.

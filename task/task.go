@@ -451,7 +451,7 @@ func (task *Task) initContract() error {
 		return err
 	}
 
-	networkContracts, err := task.lsdNetworkFactoryContract.NetworkContractsOf(nil, task.lsdTokenAddress)
+	networkContracts, err := task.lsdNetworkFactoryContract.NetworkContractsOfLsdToken(nil, task.lsdTokenAddress)
 	if err != nil {
 		return err
 	}
