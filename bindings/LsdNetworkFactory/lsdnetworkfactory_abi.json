@@ -1,0 +1,407 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_factoryAdmin",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_ethDepositAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_feePoolLogicAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_networkBalancesLogicAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_networkProposalLogicAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_nodeDepositLogicAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_userDepositLogicAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_networkWithdrawLogicAddress",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "_feePool",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_networkBalances",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_networkProposal",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_nodeDeposit",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_userDeposit",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_networkWithdraw",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_lsdToken",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_block",
+                        "type": "uint256"
+                    }
+                ],
+                "indexed": false,
+                "internalType": "struct ILsdNetworkFactory.NetworkContracts",
+                "name": "_contracts",
+                "type": "tuple"
+            }
+        ],
+        "name": "LsdNetwork",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_lsdTokenName",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_lsdTokenSymbol",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "_proxyAdmin",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_networkAdmin",
+                "type": "address"
+            },
+            {
+                "internalType": "address[]",
+                "name": "_voters",
+                "type": "address[]"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_threshold",
+                "type": "uint256"
+            }
+        ],
+        "name": "createLsdNetwork",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "ethDepositAddress",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "factoryAdmin",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_recipient",
+                "type": "address"
+            }
+        ],
+        "name": "factoryClaim",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "feePoolLogicAddress",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "networkBalancesLogicAddress",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "networkContractsOf",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "_feePool",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_networkBalances",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_networkProposal",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_nodeDeposit",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_userDeposit",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_networkWithdraw",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "_lsdToken",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_block",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "networkProposalLogicAddress",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "networkWithdrawLogicAddress",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "nodeDepositLogicAddress",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_networkBalancesLogicAddress",
+                "type": "address"
+            }
+        ],
+        "name": "setNetworkBalancesLogicAddress",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_networkProposalLogicAddress",
+                "type": "address"
+            }
+        ],
+        "name": "setNetworkProposalLogicAddress",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_networkWithdrawLogicAddress",
+                "type": "address"
+            }
+        ],
+        "name": "setNetworkWithdrawLogicAddress",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_nodeDepositLogicAddress",
+                "type": "address"
+            }
+        ],
+        "name": "setNodeDepositLogicAddress",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_userDepositLogicAddress",
+                "type": "address"
+            }
+        ],
+        "name": "setUserDepositLogicAddress",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_newAdmin",
+                "type": "address"
+            }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "userDepositLogicAddress",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "version",
+        "outputs": [
+            {
+                "internalType": "uint8",
+                "name": "",
+                "type": "uint8"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "stateMutability": "payable",
+        "type": "receive"
+    }
+]
