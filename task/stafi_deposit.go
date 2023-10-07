@@ -53,8 +53,8 @@ func (task *Task) checkAndDeposit() (retErr error) {
 	// validators need deposit
 	depositLen := poolBalanceDeci.Div(minAmountNeedDeposit).IntPart()
 	maxAvailableDepositLen := uint64(0)
-	if task.ValidatorsPerSuperNodeLimit > uint64(len(task.validatorsByKeyIndex)) {
-		maxAvailableDepositLen = task.ValidatorsPerSuperNodeLimit - uint64(len(task.validatorsByKeyIndex))
+	if task.ValidatorsPerTrustNodeLimit > uint64(len(task.validatorsByKeyIndex)) {
+		maxAvailableDepositLen = task.ValidatorsPerTrustNodeLimit - uint64(len(task.validatorsByKeyIndex))
 	}
 	if depositLen > int64(maxAvailableDepositLen) {
 		depositLen = int64(maxAvailableDepositLen)
@@ -92,15 +92,15 @@ func (task *Task) checkAndDeposit() (retErr error) {
 
 	for i := 0; i < int(depositLen); i++ {
 		credential, err := credential.NewCredential(task.seed, task.nextKeyIndex,
-			superNodeDepositAmount.Div(utils.GweiDeci).BigInt(), task.chain, task.eth1WithdrawalAdress)
+			trustNodeDepositAmount.Div(utils.GweiDeci).BigInt(), task.chain, task.eth1WithdrawalAdress)
 		if err != nil {
 			return err
 		}
 
 		pubkeyBts := credential.SigningSk.PublicKey().Marshal()
-		pubkeyStatus, err := task.mustGetSuperNodePubkeyStatus(pubkeyBts)
+		pubkeyStatus, err := task.mustGetTrustNodePubkeyStatus(pubkeyBts)
 		if err != nil {
-			return fmt.Errorf("mustGetSuperNodePubkeyStatus err: %s", err.Error())
+			return fmt.Errorf("mustGetTrustNodePubkeyStatus err: %s", err.Error())
 		}
 		if pubkeyStatus != utils.ValidatorStatusUnInitial {
 			return fmt.Errorf("pubkey %s at index %d already on chain", hex.EncodeToString(pubkeyBts), task.nextKeyIndex)
@@ -150,15 +150,15 @@ func (task *Task) checkAndDeposit() (retErr error) {
 
 	}
 
-	err = task.connectionOfSuperNodeAccount.LockAndUpdateTxOpts()
+	err = task.connectionOfTrustNodeAccount.LockAndUpdateTxOpts()
 	if err != nil {
 		return fmt.Errorf("LockAndUpdateTxOpts err: %s", err)
 	}
-	defer task.connectionOfSuperNodeAccount.UnlockTxOpts()
+	defer task.connectionOfTrustNodeAccount.UnlockTxOpts()
 
-	depositTx, err := task.nodeDepositContract.Deposit(task.connectionOfSuperNodeAccount.TxOpts(), validatorPubkeys, sigs, dataRoots)
+	depositTx, err := task.nodeDepositContract.Deposit(task.connectionOfTrustNodeAccount.TxOpts(), validatorPubkeys, sigs, dataRoots)
 	if err != nil {
-		return errors.Wrap(err, "superNodeContract.Deposit failed")
+		return errors.Wrap(err, "trustNodeContract.Deposit failed")
 	}
 
 	logrus.WithFields(logrus.Fields{
@@ -174,9 +174,9 @@ func (task *Task) checkAndDeposit() (retErr error) {
 	}
 
 	for _, pubkey := range validatorPubkeys {
-		status, err := task.mustGetSuperNodePubkeyStatus(pubkey)
+		status, err := task.mustGetTrustNodePubkeyStatus(pubkey)
 		if err != nil {
-			return fmt.Errorf("mustGetSuperNodePubkeyStatus err: %s", err.Error())
+			return fmt.Errorf("mustGetTrustNodePubkeyStatus err: %s", err.Error())
 		}
 		if status == utils.ValidatorStatusUnInitial {
 			return fmt.Errorf("validator %s not exist on chain", hex.EncodeToString(pubkey))

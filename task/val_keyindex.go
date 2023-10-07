@@ -28,9 +28,9 @@ func (task *Task) checkAndRepairValNexKeyIndex() error {
 		}
 		pubkey := credential.SigningPK().Marshal()
 
-		pubkeyStatus, err := task.mustGetSuperNodePubkeyStatus(pubkey)
+		pubkeyStatus, err := task.mustGetTrustNodePubkeyStatus(pubkey)
 		if err != nil {
-			logrus.Warnf("GetSuperNodePubkeyStatus err: %s", err.Error())
+			logrus.Warnf("GetTrustNodePubkeyStatus err: %s", err.Error())
 			time.Sleep(utils.RetryInterval)
 			retry++
 			continue

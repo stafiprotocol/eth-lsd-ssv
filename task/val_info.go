@@ -18,9 +18,9 @@ func (task *Task) updateValStatus() error {
 	if err != nil {
 		return err
 	}
-	task.ValidatorsPerSuperNodeLimit = validatorsLimit.Uint64()
+	task.ValidatorsPerTrustNodeLimit = validatorsLimit.Uint64()
 
-	logrus.Debugf("ValidatorsPerSuperNodeLimit %d", task.ValidatorsPerSuperNodeLimit)
+	logrus.Debugf("ValidatorsPerTrustNodeLimit %d", task.ValidatorsPerTrustNodeLimit)
 
 	for i := 0; i < task.nextKeyIndex; i++ {
 		val, exist := task.validatorsByKeyIndex[i]
@@ -34,9 +34,9 @@ func (task *Task) updateValStatus() error {
 
 		// status on stafi contract
 		if val.statusOnStafi < valStatusStaked {
-			pubkeyStatus, err := task.mustGetSuperNodePubkeyStatus(val.privateKey.PublicKey().Marshal())
+			pubkeyStatus, err := task.mustGetTrustNodePubkeyStatus(val.privateKey.PublicKey().Marshal())
 			if err != nil {
-				return fmt.Errorf("mustGetSuperNodePubkeyStatus err: %s", err.Error())
+				return fmt.Errorf("mustGetTrustNodePubkeyStatus err: %s", err.Error())
 			}
 
 			switch pubkeyStatus {
@@ -80,12 +80,12 @@ func (task *Task) updateValStatus() error {
 
 		// status on beacon
 		if val.statusOnStafi == valStatusStaked {
-			beaconHead, err := task.connectionOfSuperNodeAccount.Eth2BeaconHead()
+			beaconHead, err := task.connectionOfTrustNodeAccount.Eth2BeaconHead()
 			if err != nil {
-				return errors.Wrap(err, "connectionOfSuperNodeAccount.Eth2BeaconHead failed")
+				return errors.Wrap(err, "connectionOfTrustNodeAccount.Eth2BeaconHead failed")
 			}
 
-			valStatus, err := task.connectionOfSuperNodeAccount.GetValidatorStatus(types.BytesToValidatorPubkey(val.privateKey.PublicKey().Marshal()),
+			valStatus, err := task.connectionOfTrustNodeAccount.GetValidatorStatus(types.BytesToValidatorPubkey(val.privateKey.PublicKey().Marshal()),
 				&beacon.ValidatorStatusOptions{
 					Epoch: &beaconHead.Epoch,
 				})

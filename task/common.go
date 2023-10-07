@@ -147,7 +147,7 @@ Clusters2:
 	return clusterSelected[0], nil
 }
 
-func (task *Task) mustGetSuperNodePubkeyStatus(pubkey []byte) (uint8, error) {
+func (task *Task) mustGetTrustNodePubkeyStatus(pubkey []byte) (uint8, error) {
 	retry := 0
 	var pubkeyStatus uint8
 	for {
@@ -156,7 +156,7 @@ func (task *Task) mustGetSuperNodePubkeyStatus(pubkey []byte) (uint8, error) {
 		}
 		pubkeyInfo, err := task.nodeDepositContract.PubkeyInfoOf(nil, pubkey)
 		if err != nil {
-			logrus.Warnf("GetSuperNodePubkeyStatus err: %s", err.Error())
+			logrus.Warnf("GetTrustNodePubkeyStatus err: %s", err.Error())
 			time.Sleep(utils.RetryInterval)
 			retry++
 			continue

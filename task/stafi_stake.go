@@ -43,7 +43,7 @@ func (task *Task) checkAndStake() error {
 		}
 
 		validatorsNeedStake = append(validatorsNeedStake, val)
-		poolBalanceDeci = poolBalanceDeci.Sub(superNodeStakeAmount)
+		poolBalanceDeci = poolBalanceDeci.Sub(trustNodeStakeAmount)
 	}
 	lengthOfValidatorsNeedStake := len(validatorsNeedStake)
 
@@ -60,7 +60,7 @@ func (task *Task) checkAndStake() error {
 	sigs := make([][]byte, lengthOfValidatorsNeedStake)
 	dataRoots := make([][32]byte, lengthOfValidatorsNeedStake)
 	for i, val := range validatorsNeedStake {
-		credential, err := credential.NewCredential(task.seed, val.keyIndex, superNodeStakeAmount.Div(utils.GweiDeci).BigInt(),
+		credential, err := credential.NewCredential(task.seed, val.keyIndex, trustNodeStakeAmount.Div(utils.GweiDeci).BigInt(),
 			task.chain, task.eth1WithdrawalAdress)
 		if err != nil {
 			return err
@@ -87,15 +87,15 @@ func (task *Task) checkAndStake() error {
 	}
 
 	// send tx
-	err = task.connectionOfSuperNodeAccount.LockAndUpdateTxOpts()
+	err = task.connectionOfTrustNodeAccount.LockAndUpdateTxOpts()
 	if err != nil {
 		return fmt.Errorf("LockAndUpdateTxOpts err: %s", err)
 	}
-	defer task.connectionOfSuperNodeAccount.UnlockTxOpts()
+	defer task.connectionOfTrustNodeAccount.UnlockTxOpts()
 
-	stakeTx, err := task.nodeDepositContract.Stake(task.connectionOfSuperNodeAccount.TxOpts(), validatorPubkeys, sigs, dataRoots)
+	stakeTx, err := task.nodeDepositContract.Stake(task.connectionOfTrustNodeAccount.TxOpts(), validatorPubkeys, sigs, dataRoots)
 	if err != nil {
-		return errors.Wrap(err, "superNodeContract.Stake failed")
+		return errors.Wrap(err, "trustNodeContract.Stake failed")
 	}
 	logrus.WithFields(logrus.Fields{
 		"txHash":           stakeTx.Hash(),

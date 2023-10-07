@@ -42,20 +42,20 @@ func (task *Task) checkCycle(cycle int64) error {
 
 		logrus.Infof("validator %d elected at cycle %d", validator.validatorIndex, cycle)
 		// check beacon sync status
-		syncStatus, err := task.connectionOfSuperNodeAccount.Eth2Client().GetSyncStatus()
+		syncStatus, err := task.connectionOfTrustNodeAccount.Eth2Client().GetSyncStatus()
 		if err != nil {
 			return err
 		}
 		if syncStatus.Syncing {
 			return errors.New("could not perform exit: beacon node is syncing.")
 		}
-		beaconHead, err := task.connectionOfSuperNodeAccount.Eth2Client().GetBeaconHead()
+		beaconHead, err := task.connectionOfTrustNodeAccount.Eth2Client().GetBeaconHead()
 		if err != nil {
 			return err
 		}
 		// check exited before
 		pubkey := types.BytesToValidatorPubkey(validator.privateKey.PublicKey().Marshal())
-		status, err := task.connectionOfSuperNodeAccount.GetValidatorStatus(pubkey, &beacon.ValidatorStatusOptions{Epoch: &beaconHead.Epoch})
+		status, err := task.connectionOfTrustNodeAccount.GetValidatorStatus(pubkey, &beacon.ValidatorStatusOptions{Epoch: &beaconHead.Epoch})
 		if err != nil {
 			return err
 		}
@@ -81,7 +81,7 @@ func (task *Task) checkCycle(cycle int64) error {
 		// will sign and broadcast exit msg
 		exit := &ethpb.VoluntaryExit{Epoch: currentEpoch, ValidatorIndex: primTypes.ValidatorIndex(validator.validatorIndex)}
 
-		domain, err := task.connectionOfSuperNodeAccount.Eth2Client().GetDomainData(domainVoluntaryExit[:], uint64(exit.Epoch))
+		domain, err := task.connectionOfTrustNodeAccount.Eth2Client().GetDomainData(domainVoluntaryExit[:], uint64(exit.Epoch))
 		if err != nil {
 			return errors.Wrap(err, "Get domainData failed")
 		}
@@ -96,7 +96,7 @@ func (task *Task) checkCycle(cycle int64) error {
 		}
 		sig := secretKey.Sign(exitRoot[:])
 
-		err = task.connectionOfSuperNodeAccount.Eth2Client().ExitValidator(validator.validatorIndex, uint64(currentEpoch), types.BytesToValidatorSignature(sig.Marshal()))
+		err = task.connectionOfTrustNodeAccount.Eth2Client().ExitValidator(validator.validatorIndex, uint64(currentEpoch), types.BytesToValidatorSignature(sig.Marshal()))
 		if err != nil {
 			return err
 		}

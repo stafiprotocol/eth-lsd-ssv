@@ -74,14 +74,14 @@ func startSsvCmd() *cobra.Command {
 			//interrupt signal
 			ctx := utils.ShutdownListener()
 
-			// load super node account
-			kpI, err := keystore.KeypairFromAddress(cfg.SuperNodeAccount, keystore.EthChain, cfg.KeystorePath, false)
+			// load trust node account
+			kpI, err := keystore.KeypairFromAddress(cfg.TrustNodeAccount, keystore.EthChain, cfg.KeystorePath, false)
 			if err != nil {
 				return err
 			}
 			kp, ok := kpI.(*secp256k1.Keypair)
 			if !ok {
-				return fmt.Errorf("super node keypair err")
+				return fmt.Errorf("trust node keypair err")
 			}
 
 			// load ssv account

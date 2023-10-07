@@ -1,7 +1,7 @@
 eth1Endpoint = ""
 eth2Endpoint = ""
 logFilePath = ""
-superNodeAccount = "0xB3488e1Ca0089fA7E0EC370aCB0300664E82E0A2"
+trustNodeAccount = "0xB3488e1Ca0089fA7E0EC370aCB0300664E82E0A2"
 ssvAccount = "0xE6F2A8d12595fBe5D410f6CA0Be13695E61C6c35"
 gasLimit = "3000000"
 keystorePath = "./keys"

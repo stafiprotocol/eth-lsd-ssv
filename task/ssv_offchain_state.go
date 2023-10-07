@@ -34,7 +34,7 @@ const (
 )
 
 func (task *Task) updateSsvOffchainState() (retErr error) {
-	latestBlockNumber, err := task.connectionOfSuperNodeAccount.Eth1LatestBlock()
+	latestBlockNumber, err := task.connectionOfTrustNodeAccount.Eth1LatestBlock()
 	if err != nil {
 		return err
 	}

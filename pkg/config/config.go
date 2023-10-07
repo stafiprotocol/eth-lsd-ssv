@@ -14,7 +14,7 @@ type Config struct {
 	Eth1Endpoint        string // url for eth1 rpc endpoint
 	Eth2Endpoint        string // url for eth2 rpc endpoint
 	LogFilePath         string
-	SuperNodeAccount    string // ssv use
+	TrustNodeAccount    string // ssv use
 	SsvAccount          string // ssv use
 	KeystorePath        string
 	GasLimit            string

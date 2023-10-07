@@ -41,8 +41,8 @@ var (
 	minAmountNeedStake   = decimal.NewFromBigInt(big.NewInt(31), 18)
 	minAmountNeedDeposit = decimal.NewFromBigInt(big.NewInt(32), 18)
 
-	superNodeDepositAmount = decimal.NewFromBigInt(big.NewInt(1), 18)
-	superNodeStakeAmount   = decimal.NewFromBigInt(big.NewInt(31), 18)
+	trustNodeDepositAmount = decimal.NewFromBigInt(big.NewInt(1), 18)
+	trustNodeStakeAmount   = decimal.NewFromBigInt(big.NewInt(31), 18)
 
 	blocksOfOneYear = decimal.NewFromInt(2629800)
 )
@@ -76,7 +76,7 @@ const (
 	valStatusExitedOnBeacon = uint8(2)
 )
 
-// only support stafi super node account now !!!
+// only support stafi trust node account now !!!
 // 0. find next key index and cache validator status on start
 // 1. update validator status(on execution/ssv/beacon) periodically
 // 2. check stakepool balance periodically, call stake/deposit if match
@@ -88,7 +88,7 @@ type Task struct {
 	eth1Endpoint    string
 	eth2Endpoint    string
 
-	superNodeKeyPair *secp256k1.Keypair
+	trustNodeKeyPair *secp256k1.Keypair
 	ssvKeyPair       *secp256k1.Keypair
 
 	gasLimit            *big.Int
@@ -111,7 +111,7 @@ type Task struct {
 	ssvApiNetwork string
 	chain         constants.Chain
 
-	connectionOfSuperNodeAccount *connection.Connection
+	connectionOfTrustNodeAccount *connection.Connection
 	connectionOfSsvAccount       *connection.Connection
 
 	eth1WithdrawalAdress       common.Address
@@ -137,7 +137,7 @@ type Task struct {
 	nextKeyIndex                int
 	dealedEth1Block             uint64 // for offchain state
 	validatorsPerOperatorLimit  uint64
-	ValidatorsPerSuperNodeLimit uint64
+	ValidatorsPerTrustNodeLimit uint64
 	ValidatorsLimitByGas        uint64 // gas = 162917*n+268921
 
 	validatorsByKeyIndex      map[int]*Validator    // key index => validator, cache all validators(pending/active/exist) by keyIndex
@@ -184,7 +184,7 @@ type Validator struct {
 	removedFromSsvOnBlock uint64
 }
 
-func NewTask(cfg *config.Config, seed []byte, isViewMode bool, superNodeKeyPair, ssvKeyPair *secp256k1.Keypair) (*Task, error) {
+func NewTask(cfg *config.Config, seed []byte, isViewMode bool, trustNodeKeyPair, ssvKeyPair *secp256k1.Keypair) (*Task, error) {
 	if !common.IsHexAddress(cfg.Contracts.SsvNetworkAddress) {
 		return nil, fmt.Errorf("ssvnetwork contract address fmt err")
 	}
@@ -248,7 +248,7 @@ func NewTask(cfg *config.Config, seed []byte, isViewMode bool, superNodeKeyPair,
 		eth1Endpoint:         cfg.Eth1Endpoint,
 		eth2Endpoint:         cfg.Eth2Endpoint,
 		eth1Client:           eth1client,
-		superNodeKeyPair:     superNodeKeyPair,
+		trustNodeKeyPair:     trustNodeKeyPair,
 		ssvKeyPair:           ssvKeyPair,
 		seed:                 seed,
 		isViewMode:           isViewMode,
@@ -279,7 +279,7 @@ func NewTask(cfg *config.Config, seed []byte, isViewMode bool, superNodeKeyPair,
 
 func (task *Task) Start() error {
 	var err error
-	task.connectionOfSuperNodeAccount, err = connection.NewConnection(task.eth1Endpoint, task.eth2Endpoint, task.superNodeKeyPair,
+	task.connectionOfTrustNodeAccount, err = connection.NewConnection(task.eth1Endpoint, task.eth2Endpoint, task.trustNodeKeyPair,
 		task.gasLimit, task.maxGasPrice)
 	if err != nil {
 		return err
@@ -294,7 +294,7 @@ func (task *Task) Start() error {
 		return err
 	}
 
-	task.eth2Config, err = task.connectionOfSuperNodeAccount.Eth2Client().GetEth2Config()
+	task.eth2Config, err = task.connectionOfTrustNodeAccount.Eth2Client().GetEth2Config()
 	if err != nil {
 		return err
 	}

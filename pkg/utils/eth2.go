@@ -24,7 +24,7 @@ const (
 	ValidatorStatusUnInitial = uint8(0)
 	ValidatorStatusDeposited = uint8(1)
 
-	// lightnode + super node related
+	// lightnode + trust node related
 	ValidatorStatusWithdrawMatch   = uint8(2)
 	ValidatorStatusStaked          = uint8(3)
 	ValidatorStatusWithdrawUnmatch = uint8(4)
@@ -53,22 +53,9 @@ const (
 	ValidatorStatusDistributedSlash = uint8(55) // distribute full withdrawal
 )
 
-// 1 common node 2 trust node 3 light node 4 super node
-const (
-	NodeTypeCommon = uint8(1)
-	NodeTypeTrust  = uint8(2)
-	NodeTypeLight  = uint8(3)
-	NodeTypeSuper  = uint8(4)
-)
-
 const (
 	ValidatorEverSlashedFalse = uint8(0)
 	ValidatorEverSlashedTrue  = uint8(1)
-)
-
-const (
-	FeePool          = uint8(1)
-	SuperNodeFeePool = uint8(2)
 )
 
 const (
@@ -105,13 +92,12 @@ const (
 	DevTheMergeBlockNumber = uint64(133654)
 	DevRewardV1EndEpoch    = uint64(75)
 
-	StandardEffectiveBalance            = uint64(32e9) //gwei
-	StandardSuperNodeFakeDepositBalance = uint64(1e9)  //gwei
-	OfficialSlashAmount                 = uint64(1e9)  //gwei
-	MaxPartialWithdrawalAmount          = uint64(8e9)  //gwei
+	StandardEffectiveBalance   = uint64(32e9) //gwei
+	OfficialSlashAmount        = uint64(1e9)  //gwei
+	MaxPartialWithdrawalAmount = uint64(8e9)  //gwei
 
 	// node deposit amount(gwei)
-	NodeDepositAmount0  = uint64(0)    //gwei super
+	NodeDepositAmount0  = uint64(0)    //gwei trust
 	NodeDepositAmount4  = uint64(4e9)  //gwei solo 4
 	NodeDepositAmount8  = uint64(8e9)  //gwei solo 8
 	NodeDepositAmount12 = uint64(12e9) //gwei solo 12
@@ -293,18 +279,6 @@ func StafiDistributorProposalNodeKey(sender common.Address, proposalId [32]byte)
 
 func ReserveEthForWithdrawProposalId(cycle *big.Int) [32]byte {
 	return crypto.Keccak256Hash([]byte("reserveEthForWithdraw"), common.LeftPadBytes(cycle.Bytes(), 32))
-}
-
-func DistributeFeeProposalNodeKey(sender common.Address, _dealedHeight, _userAmount, _nodeAmount, _platformAmount *big.Int) [32]byte {
-	proposalId := crypto.Keccak256Hash([]byte("distributeFee"), common.LeftPadBytes(_dealedHeight.Bytes(), 32), common.LeftPadBytes(_userAmount.Bytes(), 32),
-		common.LeftPadBytes(_nodeAmount.Bytes(), 32), common.LeftPadBytes(_platformAmount.Bytes(), 32))
-	return StafiDistributorProposalNodeKey(sender, proposalId)
-}
-
-func DistributeSuperNodeFeeProposalNodeKey(sender common.Address, _dealedHeight, _userAmount, _nodeAmount, _platformAmount *big.Int) [32]byte {
-	proposalId := crypto.Keccak256Hash([]byte("distributeSuperNodeFee"), common.LeftPadBytes(_dealedHeight.Bytes(), 32), common.LeftPadBytes(_userAmount.Bytes(), 32),
-		common.LeftPadBytes(_nodeAmount.Bytes(), 32), common.LeftPadBytes(_platformAmount.Bytes(), 32))
-	return StafiDistributorProposalNodeKey(sender, proposalId)
 }
 
 func WaitTxOkCommon(client *ethclient.Client, txHash common.Hash) (blockNumber uint64, err error) {
