@@ -42,7 +42,7 @@ type ILsdNetworkFactoryNetworkContracts struct {
 
 // LsdNetworkFactoryMetaData contains all meta data concerning the LsdNetworkFactory contract.
 var LsdNetworkFactoryMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"name\":\"AddressNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyClaimed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedEpoch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedHeight\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyInitialized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyNotifyCycle\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyVoted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountNotZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BalanceNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BlockNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CallerNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableDepositZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableRewardZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CycleNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DepositAmountLTMinAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EthAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToTransfer\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMerkleProof\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidThreshold\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LengthNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LightNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LsdTokenAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyRemoved\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotFactoryAdmin\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotNetworkAdmin\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPubkeyOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotTrustNode\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProposalAlreadyExecuted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyStatusUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RateChangeOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReachCycleWithdrawLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReachPubkeyNumberLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReachUserWithdrawLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SubmitBalancesDisable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TrustNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UserDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VoterNumberOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexEmpty\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexOver\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structILsdNetworkFactory.NetworkContracts\",\"name\":\"_contracts\",\"type\":\"tuple\"}],\"name\":\"LsdNetwork\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_proxyAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkAdmin\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"createLsdNetwork\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ethDepositAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"factoryAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"factoryClaim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feePoolLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_factoryAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_ethDepositAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_feePoolLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"initialized\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"lsdTokensOfCreater\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkBalancesLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"networkContractsOfLsdToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkProposalLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkWithdrawLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nodeDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkBalancesLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkProposalLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkWithdrawLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setNodeDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setUserDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"userDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AddressNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyClaimed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedEpoch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedHeight\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyInitialized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyNotifyCycle\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyVoted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountNotZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BalanceNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BlockNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CallerNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableDepositZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableRewardZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CycleNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DepositAmountLTMinAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EthAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToTransfer\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMerkleProof\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidThreshold\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LengthNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LsdTokenAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyRemoved\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeNotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotFactoryAdmin\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotNetworkAdmin\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPubkeyOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotTrustNode\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProposalAlreadyExecuted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyStatusUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RateChangeOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RateValueUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReachCycleWithdrawLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReachPubkeyNumberLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReachUserWithdrawLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SecondsZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SoloNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SubmitBalancesDisable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TrustNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UserDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VoterNumberOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersDuplicate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexEmpty\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexOver\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"AdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beacon\",\"type\":\"address\"}],\"name\":\"BeaconUpgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structILsdNetworkFactory.NetworkContracts\",\"name\":\"contracts\",\"type\":\"tuple\"}],\"name\":\"LsdNetwork\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_networkAdmin\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"createLsdNetwork\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minDelay\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"proposers\",\"type\":\"address[]\"}],\"name\":\"createLsdNetworkWithTimelock\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ethDepositAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"factoryAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"factoryClaim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feePoolLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_factoryAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_ethDepositAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_feePoolLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_creater\",\"type\":\"address\"}],\"name\":\"lsdTokensOfCreater\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkBalancesLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"networkContractsOfLsdToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkProposalLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkWithdrawLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nodeDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"reinit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkBalancesLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkProposalLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkWithdrawLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setNodeDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setUserDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"userDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // LsdNetworkFactoryABI is the input ABI used to generate the binding from.
@@ -284,66 +284,35 @@ func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) FeePoolLogicAddress() 
 	return _LsdNetworkFactory.Contract.FeePoolLogicAddress(&_LsdNetworkFactory.CallOpts)
 }
 
-// Initialized is a free data retrieval call binding the contract method 0x158ef93e.
+// LsdTokensOfCreater is a free data retrieval call binding the contract method 0x15ae831a.
 //
-// Solidity: function initialized() view returns(bool)
-func (_LsdNetworkFactory *LsdNetworkFactoryCaller) Initialized(opts *bind.CallOpts) (bool, error) {
+// Solidity: function lsdTokensOfCreater(address _creater) view returns(address[])
+func (_LsdNetworkFactory *LsdNetworkFactoryCaller) LsdTokensOfCreater(opts *bind.CallOpts, _creater common.Address) ([]common.Address, error) {
 	var out []interface{}
-	err := _LsdNetworkFactory.contract.Call(opts, &out, "initialized")
+	err := _LsdNetworkFactory.contract.Call(opts, &out, "lsdTokensOfCreater", _creater)
 
 	if err != nil {
-		return *new(bool), err
+		return *new([]common.Address), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+	out0 := *abi.ConvertType(out[0], new([]common.Address)).(*[]common.Address)
 
 	return out0, err
 
 }
 
-// Initialized is a free data retrieval call binding the contract method 0x158ef93e.
+// LsdTokensOfCreater is a free data retrieval call binding the contract method 0x15ae831a.
 //
-// Solidity: function initialized() view returns(bool)
-func (_LsdNetworkFactory *LsdNetworkFactorySession) Initialized() (bool, error) {
-	return _LsdNetworkFactory.Contract.Initialized(&_LsdNetworkFactory.CallOpts)
+// Solidity: function lsdTokensOfCreater(address _creater) view returns(address[])
+func (_LsdNetworkFactory *LsdNetworkFactorySession) LsdTokensOfCreater(_creater common.Address) ([]common.Address, error) {
+	return _LsdNetworkFactory.Contract.LsdTokensOfCreater(&_LsdNetworkFactory.CallOpts, _creater)
 }
 
-// Initialized is a free data retrieval call binding the contract method 0x158ef93e.
+// LsdTokensOfCreater is a free data retrieval call binding the contract method 0x15ae831a.
 //
-// Solidity: function initialized() view returns(bool)
-func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) Initialized() (bool, error) {
-	return _LsdNetworkFactory.Contract.Initialized(&_LsdNetworkFactory.CallOpts)
-}
-
-// LsdTokensOfCreater is a free data retrieval call binding the contract method 0x2c429e66.
-//
-// Solidity: function lsdTokensOfCreater(address , uint256 ) view returns(address)
-func (_LsdNetworkFactory *LsdNetworkFactoryCaller) LsdTokensOfCreater(opts *bind.CallOpts, arg0 common.Address, arg1 *big.Int) (common.Address, error) {
-	var out []interface{}
-	err := _LsdNetworkFactory.contract.Call(opts, &out, "lsdTokensOfCreater", arg0, arg1)
-
-	if err != nil {
-		return *new(common.Address), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// LsdTokensOfCreater is a free data retrieval call binding the contract method 0x2c429e66.
-//
-// Solidity: function lsdTokensOfCreater(address , uint256 ) view returns(address)
-func (_LsdNetworkFactory *LsdNetworkFactorySession) LsdTokensOfCreater(arg0 common.Address, arg1 *big.Int) (common.Address, error) {
-	return _LsdNetworkFactory.Contract.LsdTokensOfCreater(&_LsdNetworkFactory.CallOpts, arg0, arg1)
-}
-
-// LsdTokensOfCreater is a free data retrieval call binding the contract method 0x2c429e66.
-//
-// Solidity: function lsdTokensOfCreater(address , uint256 ) view returns(address)
-func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) LsdTokensOfCreater(arg0 common.Address, arg1 *big.Int) (common.Address, error) {
-	return _LsdNetworkFactory.Contract.LsdTokensOfCreater(&_LsdNetworkFactory.CallOpts, arg0, arg1)
+// Solidity: function lsdTokensOfCreater(address _creater) view returns(address[])
+func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) LsdTokensOfCreater(_creater common.Address) ([]common.Address, error) {
+	return _LsdNetworkFactory.Contract.LsdTokensOfCreater(&_LsdNetworkFactory.CallOpts, _creater)
 }
 
 // NetworkBalancesLogicAddress is a free data retrieval call binding the contract method 0xc0c66c3d.
@@ -545,6 +514,37 @@ func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) NodeDepositLogicAddres
 	return _LsdNetworkFactory.Contract.NodeDepositLogicAddress(&_LsdNetworkFactory.CallOpts)
 }
 
+// ProxiableUUID is a free data retrieval call binding the contract method 0x52d1902d.
+//
+// Solidity: function proxiableUUID() view returns(bytes32)
+func (_LsdNetworkFactory *LsdNetworkFactoryCaller) ProxiableUUID(opts *bind.CallOpts) ([32]byte, error) {
+	var out []interface{}
+	err := _LsdNetworkFactory.contract.Call(opts, &out, "proxiableUUID")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
+}
+
+// ProxiableUUID is a free data retrieval call binding the contract method 0x52d1902d.
+//
+// Solidity: function proxiableUUID() view returns(bytes32)
+func (_LsdNetworkFactory *LsdNetworkFactorySession) ProxiableUUID() ([32]byte, error) {
+	return _LsdNetworkFactory.Contract.ProxiableUUID(&_LsdNetworkFactory.CallOpts)
+}
+
+// ProxiableUUID is a free data retrieval call binding the contract method 0x52d1902d.
+//
+// Solidity: function proxiableUUID() view returns(bytes32)
+func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) ProxiableUUID() ([32]byte, error) {
+	return _LsdNetworkFactory.Contract.ProxiableUUID(&_LsdNetworkFactory.CallOpts)
+}
+
 // UserDepositLogicAddress is a free data retrieval call binding the contract method 0x30d7338a.
 //
 // Solidity: function userDepositLogicAddress() view returns(address)
@@ -607,25 +607,46 @@ func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) Version() (uint8, erro
 	return _LsdNetworkFactory.Contract.Version(&_LsdNetworkFactory.CallOpts)
 }
 
-// CreateLsdNetwork is a paid mutator transaction binding the contract method 0xa5e36470.
+// CreateLsdNetwork is a paid mutator transaction binding the contract method 0xb0bc87e7.
 //
-// Solidity: function createLsdNetwork(string _lsdTokenName, string _lsdTokenSymbol, address _proxyAdmin, address _networkAdmin, address[] _voters, uint256 _threshold) returns()
-func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) CreateLsdNetwork(opts *bind.TransactOpts, _lsdTokenName string, _lsdTokenSymbol string, _proxyAdmin common.Address, _networkAdmin common.Address, _voters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
-	return _LsdNetworkFactory.contract.Transact(opts, "createLsdNetwork", _lsdTokenName, _lsdTokenSymbol, _proxyAdmin, _networkAdmin, _voters, _threshold)
+// Solidity: function createLsdNetwork(string _lsdTokenName, string _lsdTokenSymbol, address _networkAdmin, address[] _voters, uint256 _threshold) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) CreateLsdNetwork(opts *bind.TransactOpts, _lsdTokenName string, _lsdTokenSymbol string, _networkAdmin common.Address, _voters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "createLsdNetwork", _lsdTokenName, _lsdTokenSymbol, _networkAdmin, _voters, _threshold)
 }
 
-// CreateLsdNetwork is a paid mutator transaction binding the contract method 0xa5e36470.
+// CreateLsdNetwork is a paid mutator transaction binding the contract method 0xb0bc87e7.
 //
-// Solidity: function createLsdNetwork(string _lsdTokenName, string _lsdTokenSymbol, address _proxyAdmin, address _networkAdmin, address[] _voters, uint256 _threshold) returns()
-func (_LsdNetworkFactory *LsdNetworkFactorySession) CreateLsdNetwork(_lsdTokenName string, _lsdTokenSymbol string, _proxyAdmin common.Address, _networkAdmin common.Address, _voters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
-	return _LsdNetworkFactory.Contract.CreateLsdNetwork(&_LsdNetworkFactory.TransactOpts, _lsdTokenName, _lsdTokenSymbol, _proxyAdmin, _networkAdmin, _voters, _threshold)
+// Solidity: function createLsdNetwork(string _lsdTokenName, string _lsdTokenSymbol, address _networkAdmin, address[] _voters, uint256 _threshold) returns()
+func (_LsdNetworkFactory *LsdNetworkFactorySession) CreateLsdNetwork(_lsdTokenName string, _lsdTokenSymbol string, _networkAdmin common.Address, _voters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.CreateLsdNetwork(&_LsdNetworkFactory.TransactOpts, _lsdTokenName, _lsdTokenSymbol, _networkAdmin, _voters, _threshold)
 }
 
-// CreateLsdNetwork is a paid mutator transaction binding the contract method 0xa5e36470.
+// CreateLsdNetwork is a paid mutator transaction binding the contract method 0xb0bc87e7.
 //
-// Solidity: function createLsdNetwork(string _lsdTokenName, string _lsdTokenSymbol, address _proxyAdmin, address _networkAdmin, address[] _voters, uint256 _threshold) returns()
-func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) CreateLsdNetwork(_lsdTokenName string, _lsdTokenSymbol string, _proxyAdmin common.Address, _networkAdmin common.Address, _voters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
-	return _LsdNetworkFactory.Contract.CreateLsdNetwork(&_LsdNetworkFactory.TransactOpts, _lsdTokenName, _lsdTokenSymbol, _proxyAdmin, _networkAdmin, _voters, _threshold)
+// Solidity: function createLsdNetwork(string _lsdTokenName, string _lsdTokenSymbol, address _networkAdmin, address[] _voters, uint256 _threshold) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) CreateLsdNetwork(_lsdTokenName string, _lsdTokenSymbol string, _networkAdmin common.Address, _voters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.CreateLsdNetwork(&_LsdNetworkFactory.TransactOpts, _lsdTokenName, _lsdTokenSymbol, _networkAdmin, _voters, _threshold)
+}
+
+// CreateLsdNetworkWithTimelock is a paid mutator transaction binding the contract method 0x6ec78cc5.
+//
+// Solidity: function createLsdNetworkWithTimelock(string _lsdTokenName, string _lsdTokenSymbol, address[] _voters, uint256 _threshold, uint256 minDelay, address[] proposers) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) CreateLsdNetworkWithTimelock(opts *bind.TransactOpts, _lsdTokenName string, _lsdTokenSymbol string, _voters []common.Address, _threshold *big.Int, minDelay *big.Int, proposers []common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "createLsdNetworkWithTimelock", _lsdTokenName, _lsdTokenSymbol, _voters, _threshold, minDelay, proposers)
+}
+
+// CreateLsdNetworkWithTimelock is a paid mutator transaction binding the contract method 0x6ec78cc5.
+//
+// Solidity: function createLsdNetworkWithTimelock(string _lsdTokenName, string _lsdTokenSymbol, address[] _voters, uint256 _threshold, uint256 minDelay, address[] proposers) returns()
+func (_LsdNetworkFactory *LsdNetworkFactorySession) CreateLsdNetworkWithTimelock(_lsdTokenName string, _lsdTokenSymbol string, _voters []common.Address, _threshold *big.Int, minDelay *big.Int, proposers []common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.CreateLsdNetworkWithTimelock(&_LsdNetworkFactory.TransactOpts, _lsdTokenName, _lsdTokenSymbol, _voters, _threshold, minDelay, proposers)
+}
+
+// CreateLsdNetworkWithTimelock is a paid mutator transaction binding the contract method 0x6ec78cc5.
+//
+// Solidity: function createLsdNetworkWithTimelock(string _lsdTokenName, string _lsdTokenSymbol, address[] _voters, uint256 _threshold, uint256 minDelay, address[] proposers) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) CreateLsdNetworkWithTimelock(_lsdTokenName string, _lsdTokenSymbol string, _voters []common.Address, _threshold *big.Int, minDelay *big.Int, proposers []common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.CreateLsdNetworkWithTimelock(&_LsdNetworkFactory.TransactOpts, _lsdTokenName, _lsdTokenSymbol, _voters, _threshold, minDelay, proposers)
 }
 
 // FactoryClaim is a paid mutator transaction binding the contract method 0x531998ea.
@@ -668,6 +689,27 @@ func (_LsdNetworkFactory *LsdNetworkFactorySession) Init(_factoryAdmin common.Ad
 // Solidity: function init(address _factoryAdmin, address _ethDepositAddress, address _feePoolLogicAddress, address _networkBalancesLogicAddress, address _networkProposalLogicAddress, address _nodeDepositLogicAddress, address _userDepositLogicAddress, address _networkWithdrawLogicAddress) returns()
 func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) Init(_factoryAdmin common.Address, _ethDepositAddress common.Address, _feePoolLogicAddress common.Address, _networkBalancesLogicAddress common.Address, _networkProposalLogicAddress common.Address, _nodeDepositLogicAddress common.Address, _userDepositLogicAddress common.Address, _networkWithdrawLogicAddress common.Address) (*types.Transaction, error) {
 	return _LsdNetworkFactory.Contract.Init(&_LsdNetworkFactory.TransactOpts, _factoryAdmin, _ethDepositAddress, _feePoolLogicAddress, _networkBalancesLogicAddress, _networkProposalLogicAddress, _nodeDepositLogicAddress, _userDepositLogicAddress, _networkWithdrawLogicAddress)
+}
+
+// Reinit is a paid mutator transaction binding the contract method 0xc482ceaf.
+//
+// Solidity: function reinit() returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) Reinit(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "reinit")
+}
+
+// Reinit is a paid mutator transaction binding the contract method 0xc482ceaf.
+//
+// Solidity: function reinit() returns()
+func (_LsdNetworkFactory *LsdNetworkFactorySession) Reinit() (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.Reinit(&_LsdNetworkFactory.TransactOpts)
+}
+
+// Reinit is a paid mutator transaction binding the contract method 0xc482ceaf.
+//
+// Solidity: function reinit() returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) Reinit() (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.Reinit(&_LsdNetworkFactory.TransactOpts)
 }
 
 // SetNetworkBalancesLogicAddress is a paid mutator transaction binding the contract method 0xc083f1c2.
@@ -796,6 +838,48 @@ func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) TransferOwnership(
 	return _LsdNetworkFactory.Contract.TransferOwnership(&_LsdNetworkFactory.TransactOpts, _newAdmin)
 }
 
+// UpgradeTo is a paid mutator transaction binding the contract method 0x3659cfe6.
+//
+// Solidity: function upgradeTo(address newImplementation) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) UpgradeTo(opts *bind.TransactOpts, newImplementation common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "upgradeTo", newImplementation)
+}
+
+// UpgradeTo is a paid mutator transaction binding the contract method 0x3659cfe6.
+//
+// Solidity: function upgradeTo(address newImplementation) returns()
+func (_LsdNetworkFactory *LsdNetworkFactorySession) UpgradeTo(newImplementation common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.UpgradeTo(&_LsdNetworkFactory.TransactOpts, newImplementation)
+}
+
+// UpgradeTo is a paid mutator transaction binding the contract method 0x3659cfe6.
+//
+// Solidity: function upgradeTo(address newImplementation) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) UpgradeTo(newImplementation common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.UpgradeTo(&_LsdNetworkFactory.TransactOpts, newImplementation)
+}
+
+// UpgradeToAndCall is a paid mutator transaction binding the contract method 0x4f1ef286.
+//
+// Solidity: function upgradeToAndCall(address newImplementation, bytes data) payable returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) UpgradeToAndCall(opts *bind.TransactOpts, newImplementation common.Address, data []byte) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "upgradeToAndCall", newImplementation, data)
+}
+
+// UpgradeToAndCall is a paid mutator transaction binding the contract method 0x4f1ef286.
+//
+// Solidity: function upgradeToAndCall(address newImplementation, bytes data) payable returns()
+func (_LsdNetworkFactory *LsdNetworkFactorySession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.UpgradeToAndCall(&_LsdNetworkFactory.TransactOpts, newImplementation, data)
+}
+
+// UpgradeToAndCall is a paid mutator transaction binding the contract method 0x4f1ef286.
+//
+// Solidity: function upgradeToAndCall(address newImplementation, bytes data) payable returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.UpgradeToAndCall(&_LsdNetworkFactory.TransactOpts, newImplementation, data)
+}
+
 // Receive is a paid mutator transaction binding the contract receive function.
 //
 // Solidity: receive() payable returns()
@@ -815,6 +899,419 @@ func (_LsdNetworkFactory *LsdNetworkFactorySession) Receive() (*types.Transactio
 // Solidity: receive() payable returns()
 func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) Receive() (*types.Transaction, error) {
 	return _LsdNetworkFactory.Contract.Receive(&_LsdNetworkFactory.TransactOpts)
+}
+
+// LsdNetworkFactoryAdminChangedIterator is returned from FilterAdminChanged and is used to iterate over the raw logs and unpacked data for AdminChanged events raised by the LsdNetworkFactory contract.
+type LsdNetworkFactoryAdminChangedIterator struct {
+	Event *LsdNetworkFactoryAdminChanged // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *LsdNetworkFactoryAdminChangedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(LsdNetworkFactoryAdminChanged)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(LsdNetworkFactoryAdminChanged)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *LsdNetworkFactoryAdminChangedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *LsdNetworkFactoryAdminChangedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// LsdNetworkFactoryAdminChanged represents a AdminChanged event raised by the LsdNetworkFactory contract.
+type LsdNetworkFactoryAdminChanged struct {
+	PreviousAdmin common.Address
+	NewAdmin      common.Address
+	Raw           types.Log // Blockchain specific contextual infos
+}
+
+// FilterAdminChanged is a free log retrieval operation binding the contract event 0x7e644d79422f17c01e4894b5f4f588d331ebfa28653d42ae832dc59e38c9798f.
+//
+// Solidity: event AdminChanged(address previousAdmin, address newAdmin)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) FilterAdminChanged(opts *bind.FilterOpts) (*LsdNetworkFactoryAdminChangedIterator, error) {
+
+	logs, sub, err := _LsdNetworkFactory.contract.FilterLogs(opts, "AdminChanged")
+	if err != nil {
+		return nil, err
+	}
+	return &LsdNetworkFactoryAdminChangedIterator{contract: _LsdNetworkFactory.contract, event: "AdminChanged", logs: logs, sub: sub}, nil
+}
+
+// WatchAdminChanged is a free log subscription operation binding the contract event 0x7e644d79422f17c01e4894b5f4f588d331ebfa28653d42ae832dc59e38c9798f.
+//
+// Solidity: event AdminChanged(address previousAdmin, address newAdmin)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) WatchAdminChanged(opts *bind.WatchOpts, sink chan<- *LsdNetworkFactoryAdminChanged) (event.Subscription, error) {
+
+	logs, sub, err := _LsdNetworkFactory.contract.WatchLogs(opts, "AdminChanged")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(LsdNetworkFactoryAdminChanged)
+				if err := _LsdNetworkFactory.contract.UnpackLog(event, "AdminChanged", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseAdminChanged is a log parse operation binding the contract event 0x7e644d79422f17c01e4894b5f4f588d331ebfa28653d42ae832dc59e38c9798f.
+//
+// Solidity: event AdminChanged(address previousAdmin, address newAdmin)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) ParseAdminChanged(log types.Log) (*LsdNetworkFactoryAdminChanged, error) {
+	event := new(LsdNetworkFactoryAdminChanged)
+	if err := _LsdNetworkFactory.contract.UnpackLog(event, "AdminChanged", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// LsdNetworkFactoryBeaconUpgradedIterator is returned from FilterBeaconUpgraded and is used to iterate over the raw logs and unpacked data for BeaconUpgraded events raised by the LsdNetworkFactory contract.
+type LsdNetworkFactoryBeaconUpgradedIterator struct {
+	Event *LsdNetworkFactoryBeaconUpgraded // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *LsdNetworkFactoryBeaconUpgradedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(LsdNetworkFactoryBeaconUpgraded)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(LsdNetworkFactoryBeaconUpgraded)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *LsdNetworkFactoryBeaconUpgradedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *LsdNetworkFactoryBeaconUpgradedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// LsdNetworkFactoryBeaconUpgraded represents a BeaconUpgraded event raised by the LsdNetworkFactory contract.
+type LsdNetworkFactoryBeaconUpgraded struct {
+	Beacon common.Address
+	Raw    types.Log // Blockchain specific contextual infos
+}
+
+// FilterBeaconUpgraded is a free log retrieval operation binding the contract event 0x1cf3b03a6cf19fa2baba4df148e9dcabedea7f8a5c07840e207e5c089be95d3e.
+//
+// Solidity: event BeaconUpgraded(address indexed beacon)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) FilterBeaconUpgraded(opts *bind.FilterOpts, beacon []common.Address) (*LsdNetworkFactoryBeaconUpgradedIterator, error) {
+
+	var beaconRule []interface{}
+	for _, beaconItem := range beacon {
+		beaconRule = append(beaconRule, beaconItem)
+	}
+
+	logs, sub, err := _LsdNetworkFactory.contract.FilterLogs(opts, "BeaconUpgraded", beaconRule)
+	if err != nil {
+		return nil, err
+	}
+	return &LsdNetworkFactoryBeaconUpgradedIterator{contract: _LsdNetworkFactory.contract, event: "BeaconUpgraded", logs: logs, sub: sub}, nil
+}
+
+// WatchBeaconUpgraded is a free log subscription operation binding the contract event 0x1cf3b03a6cf19fa2baba4df148e9dcabedea7f8a5c07840e207e5c089be95d3e.
+//
+// Solidity: event BeaconUpgraded(address indexed beacon)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) WatchBeaconUpgraded(opts *bind.WatchOpts, sink chan<- *LsdNetworkFactoryBeaconUpgraded, beacon []common.Address) (event.Subscription, error) {
+
+	var beaconRule []interface{}
+	for _, beaconItem := range beacon {
+		beaconRule = append(beaconRule, beaconItem)
+	}
+
+	logs, sub, err := _LsdNetworkFactory.contract.WatchLogs(opts, "BeaconUpgraded", beaconRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(LsdNetworkFactoryBeaconUpgraded)
+				if err := _LsdNetworkFactory.contract.UnpackLog(event, "BeaconUpgraded", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseBeaconUpgraded is a log parse operation binding the contract event 0x1cf3b03a6cf19fa2baba4df148e9dcabedea7f8a5c07840e207e5c089be95d3e.
+//
+// Solidity: event BeaconUpgraded(address indexed beacon)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) ParseBeaconUpgraded(log types.Log) (*LsdNetworkFactoryBeaconUpgraded, error) {
+	event := new(LsdNetworkFactoryBeaconUpgraded)
+	if err := _LsdNetworkFactory.contract.UnpackLog(event, "BeaconUpgraded", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// LsdNetworkFactoryInitializedIterator is returned from FilterInitialized and is used to iterate over the raw logs and unpacked data for Initialized events raised by the LsdNetworkFactory contract.
+type LsdNetworkFactoryInitializedIterator struct {
+	Event *LsdNetworkFactoryInitialized // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *LsdNetworkFactoryInitializedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(LsdNetworkFactoryInitialized)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(LsdNetworkFactoryInitialized)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *LsdNetworkFactoryInitializedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *LsdNetworkFactoryInitializedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// LsdNetworkFactoryInitialized represents a Initialized event raised by the LsdNetworkFactory contract.
+type LsdNetworkFactoryInitialized struct {
+	Version uint8
+	Raw     types.Log // Blockchain specific contextual infos
+}
+
+// FilterInitialized is a free log retrieval operation binding the contract event 0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498.
+//
+// Solidity: event Initialized(uint8 version)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) FilterInitialized(opts *bind.FilterOpts) (*LsdNetworkFactoryInitializedIterator, error) {
+
+	logs, sub, err := _LsdNetworkFactory.contract.FilterLogs(opts, "Initialized")
+	if err != nil {
+		return nil, err
+	}
+	return &LsdNetworkFactoryInitializedIterator{contract: _LsdNetworkFactory.contract, event: "Initialized", logs: logs, sub: sub}, nil
+}
+
+// WatchInitialized is a free log subscription operation binding the contract event 0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498.
+//
+// Solidity: event Initialized(uint8 version)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) WatchInitialized(opts *bind.WatchOpts, sink chan<- *LsdNetworkFactoryInitialized) (event.Subscription, error) {
+
+	logs, sub, err := _LsdNetworkFactory.contract.WatchLogs(opts, "Initialized")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(LsdNetworkFactoryInitialized)
+				if err := _LsdNetworkFactory.contract.UnpackLog(event, "Initialized", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseInitialized is a log parse operation binding the contract event 0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498.
+//
+// Solidity: event Initialized(uint8 version)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) ParseInitialized(log types.Log) (*LsdNetworkFactoryInitialized, error) {
+	event := new(LsdNetworkFactoryInitialized)
+	if err := _LsdNetworkFactory.contract.UnpackLog(event, "Initialized", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
 }
 
 // LsdNetworkFactoryLsdNetworkIterator is returned from FilterLsdNetwork and is used to iterate over the raw logs and unpacked data for LsdNetwork events raised by the LsdNetworkFactory contract.
@@ -892,7 +1389,7 @@ type LsdNetworkFactoryLsdNetwork struct {
 
 // FilterLsdNetwork is a free log retrieval operation binding the contract event 0xdaea250f2c303367bec9ee390644e69eb6d279d72f3b9fc79c0814649227cbd7.
 //
-// Solidity: event LsdNetwork((address,address,address,address,address,address,address,uint256) _contracts)
+// Solidity: event LsdNetwork((address,address,address,address,address,address,address,uint256) contracts)
 func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) FilterLsdNetwork(opts *bind.FilterOpts) (*LsdNetworkFactoryLsdNetworkIterator, error) {
 
 	logs, sub, err := _LsdNetworkFactory.contract.FilterLogs(opts, "LsdNetwork")
@@ -904,7 +1401,7 @@ func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) FilterLsdNetwork(opts *bind
 
 // WatchLsdNetwork is a free log subscription operation binding the contract event 0xdaea250f2c303367bec9ee390644e69eb6d279d72f3b9fc79c0814649227cbd7.
 //
-// Solidity: event LsdNetwork((address,address,address,address,address,address,address,uint256) _contracts)
+// Solidity: event LsdNetwork((address,address,address,address,address,address,address,uint256) contracts)
 func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) WatchLsdNetwork(opts *bind.WatchOpts, sink chan<- *LsdNetworkFactoryLsdNetwork) (event.Subscription, error) {
 
 	logs, sub, err := _LsdNetworkFactory.contract.WatchLogs(opts, "LsdNetwork")
@@ -941,10 +1438,154 @@ func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) WatchLsdNetwork(opts *bind.
 
 // ParseLsdNetwork is a log parse operation binding the contract event 0xdaea250f2c303367bec9ee390644e69eb6d279d72f3b9fc79c0814649227cbd7.
 //
-// Solidity: event LsdNetwork((address,address,address,address,address,address,address,uint256) _contracts)
+// Solidity: event LsdNetwork((address,address,address,address,address,address,address,uint256) contracts)
 func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) ParseLsdNetwork(log types.Log) (*LsdNetworkFactoryLsdNetwork, error) {
 	event := new(LsdNetworkFactoryLsdNetwork)
 	if err := _LsdNetworkFactory.contract.UnpackLog(event, "LsdNetwork", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// LsdNetworkFactoryUpgradedIterator is returned from FilterUpgraded and is used to iterate over the raw logs and unpacked data for Upgraded events raised by the LsdNetworkFactory contract.
+type LsdNetworkFactoryUpgradedIterator struct {
+	Event *LsdNetworkFactoryUpgraded // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *LsdNetworkFactoryUpgradedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(LsdNetworkFactoryUpgraded)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(LsdNetworkFactoryUpgraded)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *LsdNetworkFactoryUpgradedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *LsdNetworkFactoryUpgradedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// LsdNetworkFactoryUpgraded represents a Upgraded event raised by the LsdNetworkFactory contract.
+type LsdNetworkFactoryUpgraded struct {
+	Implementation common.Address
+	Raw            types.Log // Blockchain specific contextual infos
+}
+
+// FilterUpgraded is a free log retrieval operation binding the contract event 0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b.
+//
+// Solidity: event Upgraded(address indexed implementation)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) FilterUpgraded(opts *bind.FilterOpts, implementation []common.Address) (*LsdNetworkFactoryUpgradedIterator, error) {
+
+	var implementationRule []interface{}
+	for _, implementationItem := range implementation {
+		implementationRule = append(implementationRule, implementationItem)
+	}
+
+	logs, sub, err := _LsdNetworkFactory.contract.FilterLogs(opts, "Upgraded", implementationRule)
+	if err != nil {
+		return nil, err
+	}
+	return &LsdNetworkFactoryUpgradedIterator{contract: _LsdNetworkFactory.contract, event: "Upgraded", logs: logs, sub: sub}, nil
+}
+
+// WatchUpgraded is a free log subscription operation binding the contract event 0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b.
+//
+// Solidity: event Upgraded(address indexed implementation)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) WatchUpgraded(opts *bind.WatchOpts, sink chan<- *LsdNetworkFactoryUpgraded, implementation []common.Address) (event.Subscription, error) {
+
+	var implementationRule []interface{}
+	for _, implementationItem := range implementation {
+		implementationRule = append(implementationRule, implementationItem)
+	}
+
+	logs, sub, err := _LsdNetworkFactory.contract.WatchLogs(opts, "Upgraded", implementationRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(LsdNetworkFactoryUpgraded)
+				if err := _LsdNetworkFactory.contract.UnpackLog(event, "Upgraded", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseUpgraded is a log parse operation binding the contract event 0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b.
+//
+// Solidity: event Upgraded(address indexed implementation)
+func (_LsdNetworkFactory *LsdNetworkFactoryFilterer) ParseUpgraded(log types.Log) (*LsdNetworkFactoryUpgraded, error) {
+	event := new(LsdNetworkFactoryUpgraded)
+	if err := _LsdNetworkFactory.contract.UnpackLog(event, "Upgraded", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

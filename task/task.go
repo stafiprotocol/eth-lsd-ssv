@@ -456,6 +456,7 @@ func (task *Task) initContract() error {
 		return err
 	}
 	logrus.Infof("networkContracts: %+v", networkContracts)
+	task.eth1WithdrawalAdress = networkContracts.NetworkWithdraw
 
 	task.eth1StartHeight = networkContracts.Block.Uint64()
 
