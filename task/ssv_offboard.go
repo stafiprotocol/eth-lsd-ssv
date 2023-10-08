@@ -62,6 +62,24 @@ func (task *Task) checkAndOffboardOnSSV() error {
 			}
 		}
 
+		// life no end but some operator's fee changed
+		if val.statusOnStafi == valStatusStaked &&
+			(val.statusOnSsv == valStatusRegistedOnSsvValid || val.statusOnSsv == valStatusRegistedOnSsvInvalid) &&
+			val.statusOnBeacon == valStatusActiveOnBeacon {
+
+			preSelectedOperators, err := task.preSelectOperators()
+			if err != nil {
+				return err
+			}
+			midFee := preSelectedOperators[len(preSelectedOperators)/2].Fee
+			for _, opId := range cluster.operatorIds {
+				if task.targetOperators[opId].Fee.GreaterThan(midFee) {
+					shouldOffboard = true
+					break
+				}
+			}
+		}
+
 		if !shouldOffboard {
 			continue
 		}
