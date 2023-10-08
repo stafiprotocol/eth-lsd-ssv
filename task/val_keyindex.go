@@ -22,7 +22,7 @@ func (task *Task) checkAndRepairValNexKeyIndex() error {
 		if retry > utils.RetryLimit {
 			return fmt.Errorf("findNextKeyIndex reach retry limit")
 		}
-		credential, err := credential.NewCredential(task.copySeed(), task.nextKeyIndex, nil, constants.Chain{}, task.eth1WithdrawalAdress)
+		credential, err := credential.NewCredential(task.copySeed(), task.nextKeyIndex, nil, constants.Chain{}, task.eth1WithdrawalAddress)
 		if err != nil {
 			return err
 		}

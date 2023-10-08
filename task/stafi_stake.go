@@ -61,7 +61,7 @@ func (task *Task) checkAndStake() error {
 	dataRoots := make([][32]byte, lengthOfValidatorsNeedStake)
 	for i, val := range validatorsNeedStake {
 		credential, err := credential.NewCredential(task.seed, val.keyIndex, trustNodeStakeAmount.Div(utils.GweiDeci).BigInt(),
-			task.chain, task.eth1WithdrawalAdress)
+			task.chain, task.eth1WithdrawalAddress)
 		if err != nil {
 			return err
 		}

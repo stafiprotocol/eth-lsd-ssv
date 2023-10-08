@@ -114,7 +114,7 @@ type Task struct {
 	connectionOfTrustNodeAccount *connection.Connection
 	connectionOfSsvAccount       *connection.Connection
 
-	eth1WithdrawalAdress       common.Address
+	eth1WithdrawalAddress      common.Address
 	feeRecipientAddressOnStafi common.Address
 	latestRegistrationNonce    uint64
 	latestTxBlock              uint64
@@ -456,7 +456,7 @@ func (task *Task) initContract() error {
 		return err
 	}
 	logrus.Infof("networkContracts: %+v", networkContracts)
-	task.eth1WithdrawalAdress = networkContracts.NetworkWithdraw
+	task.eth1WithdrawalAddress = networkContracts.NetworkWithdraw
 
 	task.eth1StartHeight = networkContracts.Block.Uint64()
 

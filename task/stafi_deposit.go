@@ -92,7 +92,7 @@ func (task *Task) checkAndDeposit() (retErr error) {
 
 	for i := 0; i < int(depositLen); i++ {
 		credential, err := credential.NewCredential(task.seed, task.nextKeyIndex,
-			trustNodeDepositAmount.Div(utils.GweiDeci).BigInt(), task.chain, task.eth1WithdrawalAdress)
+			trustNodeDepositAmount.Div(utils.GweiDeci).BigInt(), task.chain, task.eth1WithdrawalAddress)
 		if err != nil {
 			return err
 		}
