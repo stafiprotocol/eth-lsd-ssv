@@ -20,14 +20,6 @@ var valAmountThreshold = uint64(5)
 var clusterOpAmount = 4
 var opInActiveThreshold = 2
 
-func clusterKey(operators []uint64) string {
-	key := strings.Builder{}
-	for _, operator := range operators {
-		key.WriteString(fmt.Sprintf("%d/", operator))
-	}
-	return key.String()
-}
-
 // fetch new cluster and cache
 func (task *Task) fetchNewClusterAndSave() error {
 	preSelectedOperators, err := task.preSelectOperators()
@@ -43,7 +35,7 @@ func (task *Task) fetchNewClusterAndSave() error {
 		}
 		// check enough and reset if already exist
 		if len(selectedOperatorIds) == clusterOpAmount {
-			cltKey := clusterKey(selectedOperatorIds)
+			cltKey := utils.ClusterKey(selectedOperatorIds)
 			if _, exist := task.clusters[cltKey]; exist {
 				selectedOperatorIds = make([]uint64, 0)
 				continue
@@ -67,7 +59,7 @@ func (task *Task) fetchNewClusterAndSave() error {
 		"ids": selectedOperatorIds,
 	}).Debug("final selected operators")
 
-	cltKey := clusterKey(selectedOperatorIds)
+	cltKey := utils.ClusterKey(selectedOperatorIds)
 	task.clusters[cltKey] = &Cluster{
 		operatorIds:                       selectedOperatorIds,
 		latestUpdateClusterBlockNumber:    0,

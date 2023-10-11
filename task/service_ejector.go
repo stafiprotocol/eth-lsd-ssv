@@ -79,6 +79,6 @@ func (task *Task) ejectorService() {
 
 		}
 
-		time.Sleep(60 * time.Second)
+		time.Sleep(600 * time.Second)
 	}
 }

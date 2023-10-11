@@ -9,6 +9,7 @@ import (
 	"github.com/sirupsen/logrus"
 	ssv_network "github.com/stafiprotocol/eth-lsd-ssv-client/bindings/SsvNetwork"
 	ssv_network_views "github.com/stafiprotocol/eth-lsd-ssv-client/bindings/SsvNetworkViews"
+	"github.com/stafiprotocol/eth-lsd-ssv-client/pkg/utils"
 )
 
 func (task *Task) checkAndReactiveOnSSV() error {
@@ -54,7 +55,7 @@ func (task *Task) checkAndReactiveOnSSV() error {
 
 			logrus.WithFields(logrus.Fields{
 				"txHash":     reactiveTx.Hash(),
-				"clusterKey": clusterKey(cluster.operatorIds),
+				"clusterKey": utils.ClusterKey(cluster.operatorIds),
 			}).Info("reactive-tx")
 
 			err = task.waitTxOk(reactiveTx.Hash())
@@ -89,7 +90,7 @@ func (task *Task) checkAndReactiveOnSSV() error {
 
 				logrus.WithFields(logrus.Fields{
 					"txHash":     depositTx.Hash(),
-					"clusterKey": clusterKey(cluster.operatorIds),
+					"clusterKey": utils.ClusterKey(cluster.operatorIds),
 				}).Info("ssv-deposit-tx")
 
 				err = task.waitTxOk(depositTx.Hash())

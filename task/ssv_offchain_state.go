@@ -107,7 +107,7 @@ func (task *Task) updateSsvOffchainState() (retErr error) {
 				if !exist {
 					return fmt.Errorf("val %s not exist in offchain state", pubkey)
 				}
-				cltKey := clusterKey(event.OperatorIds)
+				cltKey := utils.ClusterKey(event.OperatorIds)
 				val.clusterKey = cltKey
 
 				// update cluster
@@ -250,7 +250,7 @@ func (task *Task) updateCluster(operatorIds []uint64, newCluster *ssv_network.IS
 		return operatorIds[i] < operatorIds[j]
 	})
 
-	cltKey := clusterKey(operatorIds)
+	cltKey := utils.ClusterKey(operatorIds)
 	cluster, exist := task.clusters[cltKey]
 	if !exist {
 

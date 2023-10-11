@@ -8,6 +8,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
+	"math/big"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -17,8 +18,10 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/forta-network/go-multicall"
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
+	ssv_network_views "github.com/stafiprotocol/eth-lsd-ssv-client/bindings/SsvNetworkViews"
 )
 
 var location *time.Location
@@ -285,4 +288,78 @@ func EventTopics(a abi.ABI, names ...string) ([]common.Hash, error) {
 		}
 	}
 	return topics, nil
+}
+
+func ClusterKey(operators []uint64) string {
+	key := strings.Builder{}
+	for _, operator := range operators {
+		key.WriteString(fmt.Sprintf("%d/", operator))
+	}
+	return key.String()
+}
+
+type OperatorInfoOnChain struct {
+	Owner          common.Address
+	Fee            *big.Int
+	ValidatorCount uint32
+	WhiteList      common.Address
+	IsPrivete      bool
+	IsActive       bool
+}
+
+func BatchGetOperators(multicaller *multicall.Caller, ssvNetworkViewsContractAddress common.Address, ids []uint64) (map[uint64]*OperatorInfoOnChain, error) {
+	contract, err := multicall.NewContract(ssv_network_views.SsvNetworkViewsABI, ssvNetworkViewsContractAddress.String())
+	if err != nil {
+		return nil, nil
+	}
+
+	calls := make([]*multicall.Call, len(ids))
+	for i, id := range ids {
+		calls[i] = contract.NewCall(new(OperatorInfoOnChain), "getOperatorById", id)
+	}
+
+	_, err = multicaller.Call(nil, calls...)
+	if err != nil {
+		return nil, err
+	}
+	ops := make(map[uint64]*OperatorInfoOnChain, 0)
+	for i, call := range calls {
+		if call.Failed {
+			return nil, fmt.Errorf("call failed, id %d", ids[i])
+		}
+		ops[ids[i]] = call.Outputs.(*OperatorInfoOnChain)
+	}
+	return ops, nil
+}
+
+type ClusterBalanceOnChain struct {
+	Balance *big.Int
+}
+
+func BatchGetClusterBalance(multicaller *multicall.Caller, ssvNetworkViewsContractAddress, clusterOwnerAddress common.Address,
+	opIds [][]uint64, latestClusters []*ssv_network_views.ISSVNetworkCoreCluster) (map[string]*ClusterBalanceOnChain, error) {
+	contract, err := multicall.NewContract(ssv_network_views.SsvNetworkViewsABI, ssvNetworkViewsContractAddress.String())
+	if err != nil {
+		return nil, nil
+	}
+
+	calls := make([]*multicall.Call, len(opIds))
+	for i, id := range opIds {
+		calls[i] = contract.NewCall(new(ClusterBalanceOnChain), "getBalance", clusterOwnerAddress, id, latestClusters[i]).AllowFailure()
+	}
+
+	_, err = multicaller.Call(nil, calls...)
+	if err != nil {
+		return nil, err
+	}
+	ops := make(map[string]*ClusterBalanceOnChain, 0)
+	for i, call := range calls {
+		if call.Failed {
+			ops[ClusterKey(opIds[i])] = &ClusterBalanceOnChain{Balance: big.NewInt(0)}
+		} else {
+
+			ops[ClusterKey(opIds[i])] = call.Outputs.(*ClusterBalanceOnChain)
+		}
+	}
+	return ops, nil
 }
