@@ -161,6 +161,11 @@
     },
     {
         "inputs": [],
+        "name": "NotNetworkProposal",
+        "type": "error"
+    },
+    {
+        "inputs": [],
         "name": "NotPubkeyOwner",
         "type": "error"
     },
@@ -172,6 +177,11 @@
     {
         "inputs": [],
         "name": "ProposalAlreadyExecuted",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ProposalExecFailed",
         "type": "error"
     },
     {
@@ -217,6 +227,11 @@
     {
         "inputs": [],
         "name": "SecondsZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "SoloNodeDepositAmountZero",
         "type": "error"
     },
     {
