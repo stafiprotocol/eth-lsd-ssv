@@ -1,39 +1,271 @@
 [
     {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [],
+        "name": "AddressNotAllowed",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "AlreadyClaimed",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "AlreadyDealedEpoch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "AlreadyDealedHeight",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "AlreadyInitialized",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "AlreadyNotifiedCycle",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "AlreadyVoted",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "AmountNotZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "AmountUnmatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "AmountZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "BalanceNotEnough",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "BlockNotMatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "CallerNotAllowed",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ClaimableAmountZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ClaimableDepositZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ClaimableRewardZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ClaimableWithdrawIndexOverflow",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "CommissionRateInvalid",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "CycleNotMatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "DepositAmountLTMinAmount",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "EthAmountZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "FailedToCall",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "InvalidMerkleProof",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "InvalidThreshold",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "LengthNotMatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "LsdTokenAmountZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NodeAlreadyExist",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NodeAlreadyRemoved",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NodeNotClaimable",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NotAuthorizedLsdToken",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NotClaimable",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NotPubkeyOwner",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NotTrustNode",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ProposalExecFailed",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "PubkeyAlreadyExist",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "PubkeyNotExist",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "PubkeyNumberOverLimit",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "PubkeyStatusUnmatch",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "RateChangeOverLimit",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "SecondsZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "SoloNodeDepositAmountZero",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "SoloNodeDepositDisabled",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "SubmitBalancesDisabled",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "TrustNodeDepositDisabled",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "UserDepositDisabled",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VotersDuplicate",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VotersNotEnough",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "VotersNotExist",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "WithdrawIndexEmpty",
+        "type": "error"
+    },
+    {
         "anonymous": false,
         "inputs": [
             {
-                "indexed": true,
+                "indexed": false,
                 "internalType": "address",
-                "name": "from",
+                "name": "previousAdmin",
                 "type": "address"
             },
             {
                 "indexed": false,
-                "internalType": "uint256",
-                "name": "block",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "totalEth",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "lsdTokenSupply",
-                "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "time",
-                "type": "uint256"
+                "internalType": "address",
+                "name": "newAdmin",
+                "type": "address"
             }
         ],
-        "name": "BalancesSubmitted",
+        "name": "AdminChanged",
         "type": "event"
     },
     {
@@ -68,12 +300,61 @@
         "type": "event"
     },
     {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "beacon",
+                "type": "address"
+            }
+        ],
+        "name": "BeaconUpgraded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint8",
+                "name": "version",
+                "type": "uint8"
+            }
+        ],
+        "name": "Initialized",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "implementation",
+                "type": "address"
+            }
+        ],
+        "name": "Upgraded",
+        "type": "event"
+    },
+    {
         "inputs": [],
-        "name": "balancesBlock",
+        "name": "balancesSnapshot",
         "outputs": [
             {
                 "internalType": "uint256",
-                "name": "",
+                "name": "_block",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_totalEth",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_totalLsdToken",
                 "type": "uint256"
             }
         ],
@@ -146,12 +427,12 @@
     },
     {
         "inputs": [],
-        "name": "initialized",
+        "name": "networkProposalAddress",
         "outputs": [
             {
-                "internalType": "bool",
+                "internalType": "address",
                 "name": "",
-                "type": "bool"
+                "type": "address"
             }
         ],
         "stateMutability": "view",
@@ -159,12 +440,12 @@
     },
     {
         "inputs": [],
-        "name": "networkProposalAddress",
+        "name": "proxiableUUID",
         "outputs": [
             {
-                "internalType": "address",
+                "internalType": "bytes32",
                 "name": "",
-                "type": "address"
+                "type": "bytes32"
             }
         ],
         "stateMutability": "view",
@@ -184,6 +465,13 @@
         "type": "function"
     },
     {
+        "inputs": [],
+        "name": "reinit",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
         "inputs": [
             {
                 "internalType": "uint256",
@@ -192,6 +480,19 @@
             }
         ],
         "name": "setRateChangeLimit",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_value",
+                "type": "uint256"
+            }
+        ],
+        "name": "setUpdateBalancesEpochs",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -210,7 +511,7 @@
             },
             {
                 "internalType": "uint256",
-                "name": "_lsdTokenSupply",
+                "name": "_totalLsdToken",
                 "type": "uint256"
             }
         ],
@@ -234,7 +535,7 @@
     },
     {
         "inputs": [],
-        "name": "totalEthBalance",
+        "name": "updateBalancesEpochs",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -246,16 +547,34 @@
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "totalLsdTokenSupply",
-        "outputs": [
+        "inputs": [
             {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
+                "internalType": "address",
+                "name": "newImplementation",
+                "type": "address"
             }
         ],
-        "stateMutability": "view",
+        "name": "upgradeTo",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "newImplementation",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes",
+                "name": "data",
+                "type": "bytes"
+            }
+        ],
+        "name": "upgradeToAndCall",
+        "outputs": [],
+        "stateMutability": "payable",
         "type": "function"
     },
     {
