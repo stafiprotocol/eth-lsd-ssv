@@ -140,7 +140,7 @@ type Task struct {
 	ssvNetworkAbi abi.ABI
 
 	nextKeyIndex                int
-	dealedEth1Block             uint64 // for offchain state
+	dealtEth1Block              uint64 // for offchain state
 	validatorsPerOperatorLimit  uint64
 	ValidatorsPerTrustNodeLimit uint64
 	ValidatorsLimitByGas        uint64 // gas = 162917*n+268921
@@ -315,7 +315,7 @@ func (task *Task) Start() error {
 		if !bytes.Equal(task.eth2Config.GenesisForkVersion, params.MainnetConfig().GenesisForkVersion) {
 			return fmt.Errorf("endpoint network not match")
 		}
-		task.dealedEth1Block = 17705353
+		task.dealtEth1Block = 17705353
 		task.ssvApiNetwork = "mainnet"
 		task.postUptimeUrl = mainnetPostUptimeUrl
 
@@ -325,7 +325,7 @@ func (task *Task) Start() error {
 		if !bytes.Equal(task.eth2Config.GenesisForkVersion, params.SepoliaConfig().GenesisForkVersion) {
 			return fmt.Errorf("endpoint network not match")
 		}
-		task.dealedEth1Block = 9354882
+		task.dealtEth1Block = 9354882
 		task.ssvApiNetwork = "prater"
 		task.postUptimeUrl = devPostUptimeUrl
 	case 5: // goerli
@@ -334,7 +334,7 @@ func (task *Task) Start() error {
 		if !bytes.Equal(task.eth2Config.GenesisForkVersion, params.PraterConfig().GenesisForkVersion) {
 			return fmt.Errorf("endpoint network not match")
 		}
-		task.dealedEth1Block = 9403883
+		task.dealtEth1Block = 9403883
 		task.ssvApiNetwork = "prater"
 		task.postUptimeUrl = devPostUptimeUrl
 
@@ -533,5 +533,5 @@ func (task *Task) waitTxOk(txHash common.Hash) error {
 }
 
 func (task *Task) offchainStateIsLatest() bool {
-	return task.dealedEth1Block > task.latestTxBlock
+	return task.dealtEth1Block > task.latestTxBlock
 }

@@ -43,13 +43,13 @@ func (task *Task) updateSsvOffchainState() (retErr error) {
 		latestBlockNumber -= fetchEth1WaitBlockNumbers
 	}
 
-	logrus.Debugf("latestBlockNumber: %d, dealedBlockNumber: %d", latestBlockNumber, task.dealedEth1Block)
+	logrus.Debugf("latestBlockNumber: %d, dealtBlockNumber: %d", latestBlockNumber, task.dealtEth1Block)
 
-	if latestBlockNumber <= uint64(task.dealedEth1Block) {
+	if latestBlockNumber <= uint64(task.dealtEth1Block) {
 		return nil
 	}
 
-	start := uint64(task.dealedEth1Block + 1)
+	start := uint64(task.dealtEth1Block + 1)
 	end := latestBlockNumber
 
 	for i := start; i <= end; i += fetchEventBlockLimit {
@@ -206,7 +206,7 @@ func (task *Task) updateSsvOffchainState() (retErr error) {
 			}
 		}
 
-		task.dealedEth1Block = subEnd
+		task.dealtEth1Block = subEnd
 
 		logrus.WithFields(logrus.Fields{
 			"start": subStart,
