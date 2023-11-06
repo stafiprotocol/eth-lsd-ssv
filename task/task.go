@@ -471,6 +471,7 @@ func (task *Task) initContract() error {
 		return err
 	}
 	logrus.Infof("networkContracts: %+v", networkContracts)
+	task.feeRecipientAddressOnStafi = networkContracts.FeePool
 	task.eth1WithdrawalAddress = networkContracts.NetworkWithdraw
 
 	task.eth1StartHeight = networkContracts.Block.Uint64()
