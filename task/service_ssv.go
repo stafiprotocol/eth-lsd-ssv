@@ -31,7 +31,7 @@ Out:
 				err := handler()
 				if err != nil {
 					logrus.Warnf("handler %s failed: %s, will retry.", funcName, err)
-					time.Sleep(utils.RetryInterval * 4)
+					time.Sleep(utils.RetryInterval)
 					retry++
 					continue Out
 				}

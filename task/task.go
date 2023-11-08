@@ -362,22 +362,31 @@ func (task *Task) Start() error {
 	task.multicaler = caller
 
 	// check target operator id
+	notActiveOperators := make([]uint64, 0)
 	for _, opId := range task.targetOperatorIds {
 		if _, exist := task.targetOperators[opId]; exist {
 			return fmt.Errorf("duplicate operator id: %d", opId)
 		}
 
-		owner, fee, validatorCount, _, isPrivate, isActive, err := task.ssvNetworkViewsContract.GetOperatorById(nil, opId)
+		owner, fee, validatorCount, _, isPrivate, _, err := task.ssvNetworkViewsContract.GetOperatorById(nil, opId)
 		if err != nil {
 			return errors.Wrap(err, "ssvNetworkViewsContract.GetOperatorById failed")
 		}
 		if isPrivate {
 			return fmt.Errorf("target operator %d is private", opId)
 		}
-		if !isActive {
-			return fmt.Errorf("target operator %d is not active", opId)
+
+		// fetch and check acitve status from api
+		operatorFromApi, err := task.mustGetOperatorDetail(task.ssvApiNetwork, opId)
+		if err != nil {
+			return err
+		}
+		if operatorFromApi.IsActive != 1 {
+			notActiveOperators = append(notActiveOperators, opId)
+			continue
 		}
 
+		// fetch pubkey
 		operatorAddedEvent, err := task.ssvNetworkContract.FilterOperatorAdded(nil, []uint64{opId}, []common.Address{owner})
 		if err != nil {
 			return errors.Wrapf(err, "ssvNetworkContract.FilterOperatorAdded failed, opId %d owner %s", opId, owner.String())
@@ -393,9 +402,12 @@ func (task *Task) Start() error {
 			Id:             opId,
 			PublicKey:      string(pubkey),
 			Fee:            decimal.NewFromBigInt(fee, 0),
-			Active:         isActive,
+			Active:         true,
 			ValidatorCount: uint64(validatorCount),
 		}
+	}
+	if len(notActiveOperators) > 0 {
+		return fmt.Errorf("target operators %v is not active", notActiveOperators)
 	}
 
 	err = task.initValNextKeyIndex()
@@ -405,29 +417,39 @@ func (task *Task) Start() error {
 	logrus.Infof("nextKeyIndex: %d", task.nextKeyIndex)
 	logrus.Infof("init state...")
 
-	retry := 0
-	for {
-		if retry > utils.RetryLimit {
-			return fmt.Errorf("init state reach retry limit, err: %s", err.Error())
-		}
-		err = task.updateSsvOffchainState()
-		if err != nil {
-			retry++
-			continue
-		}
-		err = task.updateValStatus()
-		if err != nil {
-			retry++
-			continue
-		}
-		err = task.updateOperatorStatus()
-		if err != nil {
-			retry++
-			continue
-		}
+	// retry := 0
+	// for {
+	// 	if retry > utils.RetryLimit {
+	// 		return fmt.Errorf("init state reach retry limit, err: %s", err.Error())
+	// 	}
+	// 	select {
+	// 	case <-task.stop:
+	// 		logrus.Info("task has stopped")
+	// 		return nil
+	// 	default:
+	// 	}
 
-		break
-	}
+	// 	err = task.updateSsvOffchainState()
+	// 	if err != nil {
+	// 		retry++
+	// 		logrus.Warnf("updateSsvOffchainState err: %s", err.Error())
+	// 		continue
+	// 	}
+	// 	err = task.updateValStatus()
+	// 	if err != nil {
+	// 		logrus.Warnf("updateValStatus err: %s", err.Error())
+	// 		retry++
+	// 		continue
+	// 	}
+	// 	err = task.updateOperatorStatus()
+	// 	if err != nil {
+	// 		logrus.Warnf("updateValStatus err: %s", err.Error())
+	// 		retry++
+	// 		continue
+	// 	}
+
+	// 	break
+	// }
 
 	task.appendHandlers(
 		task.checkAndRepairValNexKeyIndex,

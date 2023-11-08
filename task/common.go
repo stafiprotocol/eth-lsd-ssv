@@ -18,7 +18,7 @@ import (
 
 var valAmountThreshold = uint64(5)
 var clusterOpAmount = 4
-var opInActiveThreshold = 2
+var opInActiveThreshold = 1
 
 // fetch new cluster and cache
 func (task *Task) fetchNewClusterAndSave() error {
@@ -105,7 +105,7 @@ func (task *Task) preSelectOperators() ([]*keyshare.Operator, error) {
 	return preSelectedOperators, nil
 }
 
-func (task *Task) preSelectClusterForRegister() ([]*Cluster, error) {
+func (task *Task) selectLocalClusterForRegister() ([]*Cluster, error) {
 	preSelectOperators, err := task.preSelectOperators()
 	if err != nil {
 		return nil, err
@@ -143,7 +143,7 @@ Clusters:
 }
 
 func (task *Task) selectClusterForRegister() (*Cluster, error) {
-	clusterSelectedFirst, err := task.preSelectClusterForRegister()
+	clusterSelectedFirst, err := task.selectLocalClusterForRegister()
 	if err != nil {
 		return nil, err
 	}
@@ -155,7 +155,7 @@ func (task *Task) selectClusterForRegister() (*Cluster, error) {
 		}
 	}
 
-	clusterSelectedFinal, err := task.preSelectClusterForRegister()
+	clusterSelectedFinal, err := task.selectLocalClusterForRegister()
 	if err != nil {
 		return nil, err
 	}
@@ -251,7 +251,27 @@ func (task *Task) calClusterNeedDepositAmount(cluster *Cluster) (min, max *big.I
 	default:
 		return nil, nil, fmt.Errorf("unreached balance")
 	}
+}
 
+func (task *Task) mustGetOperatorDetail(network string, id uint64) (*utils.OperatorFromApi, error) {
+	retry := 0
+	var operatorDetail *utils.OperatorFromApi
+	var err error
+	for {
+		if retry > utils.RetryLimit {
+			return nil, fmt.Errorf("GetOperatorDetail reach retry limit")
+		}
+		operatorDetail, err = utils.GetOperatorFromApi(network, id)
+		if err != nil {
+			logrus.Warnf("GetOperatorDetail err: %s", err.Error())
+			time.Sleep(utils.RetryInterval)
+			retry++
+			continue
+		}
+		break
+	}
+
+	return operatorDetail, nil
 }
 
 func unpackOperatorPublicKey(fieldBytes []byte) ([]byte, error) {

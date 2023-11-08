@@ -62,7 +62,7 @@ func TestBatchGetOperators(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	ops, err := utils.BatchGetOperators(caller, common.HexToAddress("0xAE2C84c48272F5a1746150ef333D5E5B51F68763"), []uint64{1, 2, 3})
+	ops, err := utils.BatchGetOperatorsOnChain(caller, common.HexToAddress("0xAE2C84c48272F5a1746150ef333D5E5B51F68763"), []uint64{1, 2, 3})
 	if err != nil {
 		t.Fatal(err)
 	}
