@@ -16,6 +16,9 @@ build:
 	@echo " > \033[32mBuilding ssv-client...\033[0m "
 	go build -mod readonly $(BUILD_FLAGS) -o build/lsd-ssv-client main.go
 
+install: build
+	sudo mv build/lsd-ssv-client /usr/local/bin/
+
 build-linux:
 	@GOOS=linux GOARCH=amd64 go build --mod readonly $(BUILD_FLAGS) -o ./build/lsd-ssv-client main.go
 
@@ -51,4 +54,4 @@ get-lint:
 lint:
 	golangci-lint run ./... --skip-files ".+_test.go"
 
-.PHONY: all lint test race msan tools clean build
+.PHONY: all lint test race msan tools clean build install
