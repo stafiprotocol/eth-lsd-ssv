@@ -3,7 +3,7 @@ package beacon
 import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/prysmaticlabs/go-bitfield"
-	ethpb "github.com/prysmaticlabs/prysm/v3/proto/eth/v1"
+	ethpb "github.com/prysmaticlabs/prysm/v4/proto/eth/v1"
 	"github.com/stafiprotocol/eth-lsd-ssv-client/pkg/connection/types"
 )
 

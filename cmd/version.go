@@ -32,7 +32,7 @@ func versionCmd() *cobra.Command {
 				Version:    Version,
 				Commit:     Commit,
 				GoEthereum: dependencyVersions["github.com/ethereum/go-ethereum"],
-				Prysm:      dependencyVersions["github.com/prysmaticlabs/prysm/v3"],
+				Prysm:      dependencyVersions["github.com/prysmaticlabs/prysm/v4"],
 			}
 
 			bz, _ := json.MarshalIndent(v, "", "  ")

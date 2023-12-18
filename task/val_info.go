@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
-	ethpb "github.com/prysmaticlabs/prysm/v3/proto/eth/v1"
+	ethpb "github.com/prysmaticlabs/prysm/v4/proto/eth/v1"
 	"github.com/sirupsen/logrus"
 	"github.com/stafiprotocol/eth-lsd-ssv-client/pkg/connection/beacon"
 	"github.com/stafiprotocol/eth-lsd-ssv-client/pkg/connection/types"

@@ -7,6 +7,7 @@ type NetworkName string
 const (
 	ChainMAINNET  NetworkName = "mainnet"
 	ChainGOERLI   NetworkName = "goerli"
+	ChainHOLESKY  NetworkName = "holesky"
 	ChainPRATER   NetworkName = "prater"
 	ChainSEPOLIA  NetworkName = "sepolia"
 	ChainZHEJIANG NetworkName = "zhejiang"

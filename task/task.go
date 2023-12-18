@@ -15,9 +15,9 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/forta-network/go-multicall"
 	"github.com/pkg/errors"
-	"github.com/prysmaticlabs/prysm/v3/config/params"
-	types "github.com/prysmaticlabs/prysm/v3/consensus-types/primitives"
-	"github.com/prysmaticlabs/prysm/v3/encoding/bytesutil"
+	"github.com/prysmaticlabs/prysm/v4/config/params"
+	types "github.com/prysmaticlabs/prysm/v4/consensus-types/primitives"
+	"github.com/prysmaticlabs/prysm/v4/encoding/bytesutil"
 	"github.com/shopspring/decimal"
 	"github.com/sirupsen/logrus"
 	"github.com/stafiprotocol/chainbridge/utils/crypto/secp256k1"
@@ -98,7 +98,6 @@ type Task struct {
 	maxGasPrice         *big.Int
 	poolReservedBalance *big.Int
 	seed                []byte
-	postUptimeUrl       string
 	isViewMode          bool
 	targetOperatorIds   []uint64
 
@@ -109,8 +108,6 @@ type Task struct {
 	lsdNetworkFactoryAddress common.Address
 	lsdTokenAddress          common.Address
 
-	// --- need init on start
-	dev           bool
 	ssvApiNetwork string
 	chain         constants.Chain
 
@@ -310,33 +307,34 @@ func (task *Task) Start() error {
 
 	switch chainId.Uint64() {
 	case 1: //mainnet
-		task.dev = false
 		task.chain = constants.GetChain(constants.ChainMAINNET)
 		if !bytes.Equal(task.eth2Config.GenesisForkVersion, params.MainnetConfig().GenesisForkVersion) {
 			return fmt.Errorf("endpoint network not match")
 		}
 		task.dealtEth1Block = 17705353
 		task.ssvApiNetwork = "mainnet"
-		task.postUptimeUrl = mainnetPostUptimeUrl
 
 	case 11155111: // sepolia
-		task.dev = true
 		task.chain = constants.GetChain(constants.ChainSEPOLIA)
 		if !bytes.Equal(task.eth2Config.GenesisForkVersion, params.SepoliaConfig().GenesisForkVersion) {
 			return fmt.Errorf("endpoint network not match")
 		}
 		task.dealtEth1Block = 9354882
 		task.ssvApiNetwork = "prater"
-		task.postUptimeUrl = devPostUptimeUrl
+	case 17000: // holesky
+		task.chain = constants.GetChain(constants.ChainHOLESKY)
+		if !bytes.Equal(task.eth2Config.GenesisForkVersion, params.HoleskyConfig().GenesisForkVersion) {
+			return fmt.Errorf("endpoint network not match")
+		}
+		task.dealtEth1Block = 9403883
+		task.ssvApiNetwork = "holesky"
 	case 5: // goerli
-		task.dev = true
 		task.chain = constants.GetChain(constants.ChainGOERLI)
 		if !bytes.Equal(task.eth2Config.GenesisForkVersion, params.PraterConfig().GenesisForkVersion) {
 			return fmt.Errorf("endpoint network not match")
 		}
 		task.dealtEth1Block = 9403883
 		task.ssvApiNetwork = "prater"
-		task.postUptimeUrl = devPostUptimeUrl
 
 	default:
 		return fmt.Errorf("unsupport chainId: %d", chainId.Int64())
