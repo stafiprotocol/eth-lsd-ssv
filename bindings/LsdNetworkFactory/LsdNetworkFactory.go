@@ -26,6 +26,7 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = abi.ConvertType
 )
 
 // ILsdNetworkFactoryNetworkContracts is an auto generated low-level Go binding around an user-defined struct.
@@ -41,7 +42,7 @@ type ILsdNetworkFactoryNetworkContracts struct {
 
 // LsdNetworkFactoryMetaData contains all meta data concerning the LsdNetworkFactory contract.
 var LsdNetworkFactoryMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AddressNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyClaimed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedEpoch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedHeight\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyInitialized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyNotifiedCycle\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyVoted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountNotZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BalanceNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BlockNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CallerNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableDepositZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableRewardZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableWithdrawIndexOverflow\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CommissionRateInvalid\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CycleNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DepositAmountLTMinAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EthAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMerkleProof\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidThreshold\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LengthNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LsdTokenAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyRemoved\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeNotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotAuthorizedLsdToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPubkeyOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotTrustNode\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProposalExecFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNumberOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyStatusUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RateChangeOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SecondsZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SoloNodeDepositAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SoloNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SubmitBalancesDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TrustNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UserDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersDuplicate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexEmpty\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"AdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beacon\",\"type\":\"address\"}],\"name\":\"BeaconUpgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structILsdNetworkFactory.NetworkContracts\",\"name\":\"contracts\",\"type\":\"tuple\"}],\"name\":\"LsdNetwork\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"}],\"name\":\"addAuthorizedLsdToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"authorizedLsdToken\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_networkAdmin\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"createLsdNetwork\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkAdmin\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"createLsdNetworkWithLsdToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minDelay\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"_proposers\",\"type\":\"address[]\"}],\"name\":\"createLsdNetworkWithTimelock\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ethDepositAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"factoryAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"factoryClaim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feePoolLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_factoryAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_ethDepositAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_feePoolLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_creater\",\"type\":\"address\"}],\"name\":\"lsdTokensOfCreater\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkBalancesLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"networkContractsOfLsdToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkProposalLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkWithdrawLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nodeDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"reinit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"}],\"name\":\"removeAuthorizedLsdToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkBalancesLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkProposalLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkWithdrawLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setNodeDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setUserDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"transferAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"userDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AddressNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyClaimed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedEpoch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedHeight\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyInitialized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyNotifiedCycle\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyVoted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountNotZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BalanceNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BlockNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CallerNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableDepositZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableRewardZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableWithdrawIndexOverflow\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CommissionRateInvalid\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CycleNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DepositAmountGTMaxAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DepositAmountLTMinAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EthAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMerkleProof\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidThreshold\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LengthNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LsdTokenAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyRemoved\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeNotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotAuthorizedLsdToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPubkeyOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotTrustNode\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProposalExecFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNumberOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyStatusUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RateChangeOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SoloNodeDepositAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SoloNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SubmitBalancesDisabled\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"}],\"name\":\"TooLow\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TrustNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UserDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersDuplicate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexEmpty\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"AdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beacon\",\"type\":\"address\"}],\"name\":\"BeaconUpgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"structILsdNetworkFactory.NetworkContracts\",\"name\":\"contracts\",\"type\":\"tuple\"}],\"name\":\"LsdNetwork\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"}],\"name\":\"addAuthorizedLsdToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"}],\"name\":\"addEntrustedLsdToken\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"authorizedLsdToken\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_networkAdmin\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"createLsdNetwork\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_networkAdmin\",\"type\":\"address\"}],\"name\":\"createLsdNetworkWithEntrustedVoters\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkAdmin\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"createLsdNetworkWithLsdToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_lsdTokenName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_lsdTokenSymbol\",\"type\":\"string\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minDelay\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"_proposers\",\"type\":\"address[]\"}],\"name\":\"createLsdNetworkWithTimelock\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"entrustWithThreshold\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ethDepositAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"factoryAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"factoryClaim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feePoolLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getEntrustWithVoters\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getEntrustedLsdTokens\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_factoryAdmin\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_ethDepositAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_feePoolLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_creater\",\"type\":\"address\"}],\"name\":\"lsdTokensOfCreater\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkBalancesLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"networkContractsOfLsdToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_feePool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkBalances\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkProposal\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nodeDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_userDeposit\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_networkWithdraw\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_block\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkProposalLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"networkWithdrawLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"nodeDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"reinit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"}],\"name\":\"removeAuthorizedLsdToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lsdToken\",\"type\":\"address\"}],\"name\":\"removeEntrustedLsdToken\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_newVoters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"setEntrustWithVoters\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkBalancesLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkBalancesLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkProposalLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkProposalLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_networkWithdrawLogicAddress\",\"type\":\"address\"}],\"name\":\"setNetworkWithdrawLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_nodeDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setNodeDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userDepositLogicAddress\",\"type\":\"address\"}],\"name\":\"setUserDepositLogicAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"transferAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"userDepositLogicAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}]",
 }
 
 // LsdNetworkFactoryABI is the input ABI used to generate the binding from.
@@ -145,11 +146,11 @@ func NewLsdNetworkFactoryFilterer(address common.Address, filterer bind.Contract
 
 // bindLsdNetworkFactory binds a generic wrapper to an already deployed contract.
 func bindLsdNetworkFactory(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(LsdNetworkFactoryABI))
+	parsed, err := LsdNetworkFactoryMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
-	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
+	return bind.NewBoundContract(address, *parsed, caller, transactor, filterer), nil
 }
 
 // Call invokes the (constant) contract method with params as input values and
@@ -219,6 +220,37 @@ func (_LsdNetworkFactory *LsdNetworkFactorySession) AuthorizedLsdToken(arg0 comm
 // Solidity: function authorizedLsdToken(address ) view returns(bool)
 func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) AuthorizedLsdToken(arg0 common.Address) (bool, error) {
 	return _LsdNetworkFactory.Contract.AuthorizedLsdToken(&_LsdNetworkFactory.CallOpts, arg0)
+}
+
+// EntrustWithThreshold is a free data retrieval call binding the contract method 0xfe917465.
+//
+// Solidity: function entrustWithThreshold() view returns(uint8)
+func (_LsdNetworkFactory *LsdNetworkFactoryCaller) EntrustWithThreshold(opts *bind.CallOpts) (uint8, error) {
+	var out []interface{}
+	err := _LsdNetworkFactory.contract.Call(opts, &out, "entrustWithThreshold")
+
+	if err != nil {
+		return *new(uint8), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(uint8)).(*uint8)
+
+	return out0, err
+
+}
+
+// EntrustWithThreshold is a free data retrieval call binding the contract method 0xfe917465.
+//
+// Solidity: function entrustWithThreshold() view returns(uint8)
+func (_LsdNetworkFactory *LsdNetworkFactorySession) EntrustWithThreshold() (uint8, error) {
+	return _LsdNetworkFactory.Contract.EntrustWithThreshold(&_LsdNetworkFactory.CallOpts)
+}
+
+// EntrustWithThreshold is a free data retrieval call binding the contract method 0xfe917465.
+//
+// Solidity: function entrustWithThreshold() view returns(uint8)
+func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) EntrustWithThreshold() (uint8, error) {
+	return _LsdNetworkFactory.Contract.EntrustWithThreshold(&_LsdNetworkFactory.CallOpts)
 }
 
 // EthDepositAddress is a free data retrieval call binding the contract method 0xb420feb2.
@@ -312,6 +344,68 @@ func (_LsdNetworkFactory *LsdNetworkFactorySession) FeePoolLogicAddress() (commo
 // Solidity: function feePoolLogicAddress() view returns(address)
 func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) FeePoolLogicAddress() (common.Address, error) {
 	return _LsdNetworkFactory.Contract.FeePoolLogicAddress(&_LsdNetworkFactory.CallOpts)
+}
+
+// GetEntrustWithVoters is a free data retrieval call binding the contract method 0xd99ef5a8.
+//
+// Solidity: function getEntrustWithVoters() view returns(address[])
+func (_LsdNetworkFactory *LsdNetworkFactoryCaller) GetEntrustWithVoters(opts *bind.CallOpts) ([]common.Address, error) {
+	var out []interface{}
+	err := _LsdNetworkFactory.contract.Call(opts, &out, "getEntrustWithVoters")
+
+	if err != nil {
+		return *new([]common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]common.Address)).(*[]common.Address)
+
+	return out0, err
+
+}
+
+// GetEntrustWithVoters is a free data retrieval call binding the contract method 0xd99ef5a8.
+//
+// Solidity: function getEntrustWithVoters() view returns(address[])
+func (_LsdNetworkFactory *LsdNetworkFactorySession) GetEntrustWithVoters() ([]common.Address, error) {
+	return _LsdNetworkFactory.Contract.GetEntrustWithVoters(&_LsdNetworkFactory.CallOpts)
+}
+
+// GetEntrustWithVoters is a free data retrieval call binding the contract method 0xd99ef5a8.
+//
+// Solidity: function getEntrustWithVoters() view returns(address[])
+func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) GetEntrustWithVoters() ([]common.Address, error) {
+	return _LsdNetworkFactory.Contract.GetEntrustWithVoters(&_LsdNetworkFactory.CallOpts)
+}
+
+// GetEntrustedLsdTokens is a free data retrieval call binding the contract method 0xbf55c8c6.
+//
+// Solidity: function getEntrustedLsdTokens() view returns(address[])
+func (_LsdNetworkFactory *LsdNetworkFactoryCaller) GetEntrustedLsdTokens(opts *bind.CallOpts) ([]common.Address, error) {
+	var out []interface{}
+	err := _LsdNetworkFactory.contract.Call(opts, &out, "getEntrustedLsdTokens")
+
+	if err != nil {
+		return *new([]common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]common.Address)).(*[]common.Address)
+
+	return out0, err
+
+}
+
+// GetEntrustedLsdTokens is a free data retrieval call binding the contract method 0xbf55c8c6.
+//
+// Solidity: function getEntrustedLsdTokens() view returns(address[])
+func (_LsdNetworkFactory *LsdNetworkFactorySession) GetEntrustedLsdTokens() ([]common.Address, error) {
+	return _LsdNetworkFactory.Contract.GetEntrustedLsdTokens(&_LsdNetworkFactory.CallOpts)
+}
+
+// GetEntrustedLsdTokens is a free data retrieval call binding the contract method 0xbf55c8c6.
+//
+// Solidity: function getEntrustedLsdTokens() view returns(address[])
+func (_LsdNetworkFactory *LsdNetworkFactoryCallerSession) GetEntrustedLsdTokens() ([]common.Address, error) {
+	return _LsdNetworkFactory.Contract.GetEntrustedLsdTokens(&_LsdNetworkFactory.CallOpts)
 }
 
 // LsdTokensOfCreater is a free data retrieval call binding the contract method 0x15ae831a.
@@ -653,6 +747,27 @@ func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) AddAuthorizedLsdTo
 	return _LsdNetworkFactory.Contract.AddAuthorizedLsdToken(&_LsdNetworkFactory.TransactOpts, _lsdToken)
 }
 
+// AddEntrustedLsdToken is a paid mutator transaction binding the contract method 0x8d5c2d42.
+//
+// Solidity: function addEntrustedLsdToken(address _lsdToken) returns(bool)
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) AddEntrustedLsdToken(opts *bind.TransactOpts, _lsdToken common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "addEntrustedLsdToken", _lsdToken)
+}
+
+// AddEntrustedLsdToken is a paid mutator transaction binding the contract method 0x8d5c2d42.
+//
+// Solidity: function addEntrustedLsdToken(address _lsdToken) returns(bool)
+func (_LsdNetworkFactory *LsdNetworkFactorySession) AddEntrustedLsdToken(_lsdToken common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.AddEntrustedLsdToken(&_LsdNetworkFactory.TransactOpts, _lsdToken)
+}
+
+// AddEntrustedLsdToken is a paid mutator transaction binding the contract method 0x8d5c2d42.
+//
+// Solidity: function addEntrustedLsdToken(address _lsdToken) returns(bool)
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) AddEntrustedLsdToken(_lsdToken common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.AddEntrustedLsdToken(&_LsdNetworkFactory.TransactOpts, _lsdToken)
+}
+
 // CreateLsdNetwork is a paid mutator transaction binding the contract method 0xb0bc87e7.
 //
 // Solidity: function createLsdNetwork(string _lsdTokenName, string _lsdTokenSymbol, address _networkAdmin, address[] _voters, uint256 _threshold) returns()
@@ -672,6 +787,27 @@ func (_LsdNetworkFactory *LsdNetworkFactorySession) CreateLsdNetwork(_lsdTokenNa
 // Solidity: function createLsdNetwork(string _lsdTokenName, string _lsdTokenSymbol, address _networkAdmin, address[] _voters, uint256 _threshold) returns()
 func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) CreateLsdNetwork(_lsdTokenName string, _lsdTokenSymbol string, _networkAdmin common.Address, _voters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
 	return _LsdNetworkFactory.Contract.CreateLsdNetwork(&_LsdNetworkFactory.TransactOpts, _lsdTokenName, _lsdTokenSymbol, _networkAdmin, _voters, _threshold)
+}
+
+// CreateLsdNetworkWithEntrustedVoters is a paid mutator transaction binding the contract method 0xf319c30d.
+//
+// Solidity: function createLsdNetworkWithEntrustedVoters(string _lsdTokenName, string _lsdTokenSymbol, address _networkAdmin) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) CreateLsdNetworkWithEntrustedVoters(opts *bind.TransactOpts, _lsdTokenName string, _lsdTokenSymbol string, _networkAdmin common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "createLsdNetworkWithEntrustedVoters", _lsdTokenName, _lsdTokenSymbol, _networkAdmin)
+}
+
+// CreateLsdNetworkWithEntrustedVoters is a paid mutator transaction binding the contract method 0xf319c30d.
+//
+// Solidity: function createLsdNetworkWithEntrustedVoters(string _lsdTokenName, string _lsdTokenSymbol, address _networkAdmin) returns()
+func (_LsdNetworkFactory *LsdNetworkFactorySession) CreateLsdNetworkWithEntrustedVoters(_lsdTokenName string, _lsdTokenSymbol string, _networkAdmin common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.CreateLsdNetworkWithEntrustedVoters(&_LsdNetworkFactory.TransactOpts, _lsdTokenName, _lsdTokenSymbol, _networkAdmin)
+}
+
+// CreateLsdNetworkWithEntrustedVoters is a paid mutator transaction binding the contract method 0xf319c30d.
+//
+// Solidity: function createLsdNetworkWithEntrustedVoters(string _lsdTokenName, string _lsdTokenSymbol, address _networkAdmin) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) CreateLsdNetworkWithEntrustedVoters(_lsdTokenName string, _lsdTokenSymbol string, _networkAdmin common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.CreateLsdNetworkWithEntrustedVoters(&_LsdNetworkFactory.TransactOpts, _lsdTokenName, _lsdTokenSymbol, _networkAdmin)
 }
 
 // CreateLsdNetworkWithLsdToken is a paid mutator transaction binding the contract method 0xc05a6b6f.
@@ -798,6 +934,48 @@ func (_LsdNetworkFactory *LsdNetworkFactorySession) RemoveAuthorizedLsdToken(_ls
 // Solidity: function removeAuthorizedLsdToken(address _lsdToken) returns()
 func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) RemoveAuthorizedLsdToken(_lsdToken common.Address) (*types.Transaction, error) {
 	return _LsdNetworkFactory.Contract.RemoveAuthorizedLsdToken(&_LsdNetworkFactory.TransactOpts, _lsdToken)
+}
+
+// RemoveEntrustedLsdToken is a paid mutator transaction binding the contract method 0x2255ada1.
+//
+// Solidity: function removeEntrustedLsdToken(address _lsdToken) returns(bool)
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) RemoveEntrustedLsdToken(opts *bind.TransactOpts, _lsdToken common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "removeEntrustedLsdToken", _lsdToken)
+}
+
+// RemoveEntrustedLsdToken is a paid mutator transaction binding the contract method 0x2255ada1.
+//
+// Solidity: function removeEntrustedLsdToken(address _lsdToken) returns(bool)
+func (_LsdNetworkFactory *LsdNetworkFactorySession) RemoveEntrustedLsdToken(_lsdToken common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.RemoveEntrustedLsdToken(&_LsdNetworkFactory.TransactOpts, _lsdToken)
+}
+
+// RemoveEntrustedLsdToken is a paid mutator transaction binding the contract method 0x2255ada1.
+//
+// Solidity: function removeEntrustedLsdToken(address _lsdToken) returns(bool)
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) RemoveEntrustedLsdToken(_lsdToken common.Address) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.RemoveEntrustedLsdToken(&_LsdNetworkFactory.TransactOpts, _lsdToken)
+}
+
+// SetEntrustWithVoters is a paid mutator transaction binding the contract method 0x98590dfb.
+//
+// Solidity: function setEntrustWithVoters(address[] _newVoters, uint256 _threshold) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactor) SetEntrustWithVoters(opts *bind.TransactOpts, _newVoters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _LsdNetworkFactory.contract.Transact(opts, "setEntrustWithVoters", _newVoters, _threshold)
+}
+
+// SetEntrustWithVoters is a paid mutator transaction binding the contract method 0x98590dfb.
+//
+// Solidity: function setEntrustWithVoters(address[] _newVoters, uint256 _threshold) returns()
+func (_LsdNetworkFactory *LsdNetworkFactorySession) SetEntrustWithVoters(_newVoters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.SetEntrustWithVoters(&_LsdNetworkFactory.TransactOpts, _newVoters, _threshold)
+}
+
+// SetEntrustWithVoters is a paid mutator transaction binding the contract method 0x98590dfb.
+//
+// Solidity: function setEntrustWithVoters(address[] _newVoters, uint256 _threshold) returns()
+func (_LsdNetworkFactory *LsdNetworkFactoryTransactorSession) SetEntrustWithVoters(_newVoters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _LsdNetworkFactory.Contract.SetEntrustWithVoters(&_LsdNetworkFactory.TransactOpts, _newVoters, _threshold)
 }
 
 // SetNetworkBalancesLogicAddress is a paid mutator transaction binding the contract method 0xc083f1c2.

@@ -26,11 +26,12 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = abi.ConvertType
 )
 
 // NetworkProposalMetaData contains all meta data concerning the NetworkProposal contract.
 var NetworkProposalMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AddressNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyClaimed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedEpoch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedHeight\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyInitialized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyNotifiedCycle\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyVoted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountNotZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BalanceNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BlockNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CallerNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableDepositZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableRewardZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableWithdrawIndexOverflow\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CommissionRateInvalid\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CycleNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DepositAmountLTMinAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EthAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMerkleProof\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidThreshold\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LengthNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LsdTokenAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyRemoved\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeNotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotAuthorizedLsdToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPubkeyOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotTrustNode\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProposalExecFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNumberOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyStatusUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RateChangeOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SecondsZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SoloNodeDepositAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SoloNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SubmitBalancesDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TrustNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UserDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersDuplicate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexEmpty\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"AdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beacon\",\"type\":\"address\"}],\"name\":\"BeaconUpgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"_proposalId\",\"type\":\"bytes32\"}],\"name\":\"ProposalExecuted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"_proposalId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"VoteProposal\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"addVoter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_tos\",\"type\":\"address[]\"},{\"internalType\":\"bytes[]\",\"name\":\"_callDatas\",\"type\":\"bytes[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_proposalFactors\",\"type\":\"uint256[]\"}],\"name\":\"batchExecProposals\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_newThreshold\",\"type\":\"uint256\"}],\"name\":\"changeThreshold\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_callData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_proposalFactor\",\"type\":\"uint256\"}],\"name\":\"execProposal\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"getVoterIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_proposalId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"hasVoted\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_initialThreshold\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_adminAddress\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"}],\"name\":\"isAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"}],\"name\":\"isVoter\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"proposals\",\"outputs\":[{\"internalType\":\"enumINetworkProposal.ProposalStatus\",\"name\":\"_status\",\"type\":\"uint8\"},{\"internalType\":\"uint16\",\"name\":\"_yesVotes\",\"type\":\"uint16\"},{\"internalType\":\"uint8\",\"name\":\"_yesVotesTotal\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"reinit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"removeVoter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"threshold\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"transferAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AddressNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyClaimed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedEpoch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyDealedHeight\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyInitialized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyNotifiedCycle\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyVoted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountNotZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BalanceNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BlockNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CallerNotAllowed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableDepositZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableRewardZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimableWithdrawIndexOverflow\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CommissionRateInvalid\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CycleNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DepositAmountGTMaxAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DepositAmountLTMinAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EthAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FailedToCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMerkleProof\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidThreshold\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LengthNotMatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LsdTokenAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeAlreadyRemoved\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NodeNotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotAuthorizedLsdToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotClaimable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPubkeyOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotTrustNode\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ProposalExecFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyAlreadyExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyNumberOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PubkeyStatusUnmatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RateChangeOverLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SoloNodeDepositAmountZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SoloNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SubmitBalancesDisabled\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"}],\"name\":\"TooLow\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TrustNodeDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UserDepositDisabled\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersDuplicate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotEnough\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotersNotExist\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawIndexEmpty\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"AdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beacon\",\"type\":\"address\"}],\"name\":\"BeaconUpgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"_proposalId\",\"type\":\"bytes32\"}],\"name\":\"ProposalExecuted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"_proposalId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"VoteProposal\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_oldManager\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_newManager\",\"type\":\"address\"}],\"name\":\"VoterManagementTakenOver\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"addVoter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_tos\",\"type\":\"address[]\"},{\"internalType\":\"bytes[]\",\"name\":\"_callDatas\",\"type\":\"bytes[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_proposalFactors\",\"type\":\"uint256[]\"}],\"name\":\"batchExecProposals\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_newThreshold\",\"type\":\"uint256\"}],\"name\":\"changeThreshold\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_callData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_proposalFactor\",\"type\":\"uint256\"}],\"name\":\"execProposal\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"getVoterIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_proposalId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"hasVoted\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_initialThreshold\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_adminAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_voterManagerAddress\",\"type\":\"address\"}],\"name\":\"init\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"}],\"name\":\"isAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"}],\"name\":\"isVoter\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"proposals\",\"outputs\":[{\"internalType\":\"enumINetworkProposal.ProposalStatus\",\"name\":\"_status\",\"type\":\"uint8\"},{\"internalType\":\"uint16\",\"name\":\"_yesVotes\",\"type\":\"uint16\"},{\"internalType\":\"uint8\",\"name\":\"_yesVotesTotal\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"reinit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_voter\",\"type\":\"address\"}],\"name\":\"removeVoter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_newVoters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"replaceVoters\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newVoterManager\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_newVoters\",\"type\":\"address[]\"},{\"internalType\":\"uint256\",\"name\":\"_threshold\",\"type\":\"uint256\"}],\"name\":\"takeoverVoterManagement\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"threshold\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newAdmin\",\"type\":\"address\"}],\"name\":\"transferAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newVoterManager\",\"type\":\"address\"}],\"name\":\"transferVoterManager\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"voterManager\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // NetworkProposalABI is the input ABI used to generate the binding from.
@@ -134,11 +135,11 @@ func NewNetworkProposalFilterer(address common.Address, filterer bind.ContractFi
 
 // bindNetworkProposal binds a generic wrapper to an already deployed contract.
 func bindNetworkProposal(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(NetworkProposalABI))
+	parsed, err := NetworkProposalMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
-	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
+	return bind.NewBoundContract(address, *parsed, caller, transactor, filterer), nil
 }
 
 // Call invokes the (constant) contract method with params as input values and
@@ -477,6 +478,37 @@ func (_NetworkProposal *NetworkProposalCallerSession) Version() (uint8, error) {
 	return _NetworkProposal.Contract.Version(&_NetworkProposal.CallOpts)
 }
 
+// VoterManager is a free data retrieval call binding the contract method 0x65910a4f.
+//
+// Solidity: function voterManager() view returns(address)
+func (_NetworkProposal *NetworkProposalCaller) VoterManager(opts *bind.CallOpts) (common.Address, error) {
+	var out []interface{}
+	err := _NetworkProposal.contract.Call(opts, &out, "voterManager")
+
+	if err != nil {
+		return *new(common.Address), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
+
+	return out0, err
+
+}
+
+// VoterManager is a free data retrieval call binding the contract method 0x65910a4f.
+//
+// Solidity: function voterManager() view returns(address)
+func (_NetworkProposal *NetworkProposalSession) VoterManager() (common.Address, error) {
+	return _NetworkProposal.Contract.VoterManager(&_NetworkProposal.CallOpts)
+}
+
+// VoterManager is a free data retrieval call binding the contract method 0x65910a4f.
+//
+// Solidity: function voterManager() view returns(address)
+func (_NetworkProposal *NetworkProposalCallerSession) VoterManager() (common.Address, error) {
+	return _NetworkProposal.Contract.VoterManager(&_NetworkProposal.CallOpts)
+}
+
 // AddVoter is a paid mutator transaction binding the contract method 0xf4ab9adf.
 //
 // Solidity: function addVoter(address _voter) returns()
@@ -561,25 +593,25 @@ func (_NetworkProposal *NetworkProposalTransactorSession) ExecProposal(_to commo
 	return _NetworkProposal.Contract.ExecProposal(&_NetworkProposal.TransactOpts, _to, _callData, _proposalFactor)
 }
 
-// Init is a paid mutator transaction binding the contract method 0xba50db3b.
+// Init is a paid mutator transaction binding the contract method 0x6d844b5c.
 //
-// Solidity: function init(address[] _voters, uint256 _initialThreshold, address _adminAddress) returns()
-func (_NetworkProposal *NetworkProposalTransactor) Init(opts *bind.TransactOpts, _voters []common.Address, _initialThreshold *big.Int, _adminAddress common.Address) (*types.Transaction, error) {
-	return _NetworkProposal.contract.Transact(opts, "init", _voters, _initialThreshold, _adminAddress)
+// Solidity: function init(address[] _voters, uint256 _initialThreshold, address _adminAddress, address _voterManagerAddress) returns()
+func (_NetworkProposal *NetworkProposalTransactor) Init(opts *bind.TransactOpts, _voters []common.Address, _initialThreshold *big.Int, _adminAddress common.Address, _voterManagerAddress common.Address) (*types.Transaction, error) {
+	return _NetworkProposal.contract.Transact(opts, "init", _voters, _initialThreshold, _adminAddress, _voterManagerAddress)
 }
 
-// Init is a paid mutator transaction binding the contract method 0xba50db3b.
+// Init is a paid mutator transaction binding the contract method 0x6d844b5c.
 //
-// Solidity: function init(address[] _voters, uint256 _initialThreshold, address _adminAddress) returns()
-func (_NetworkProposal *NetworkProposalSession) Init(_voters []common.Address, _initialThreshold *big.Int, _adminAddress common.Address) (*types.Transaction, error) {
-	return _NetworkProposal.Contract.Init(&_NetworkProposal.TransactOpts, _voters, _initialThreshold, _adminAddress)
+// Solidity: function init(address[] _voters, uint256 _initialThreshold, address _adminAddress, address _voterManagerAddress) returns()
+func (_NetworkProposal *NetworkProposalSession) Init(_voters []common.Address, _initialThreshold *big.Int, _adminAddress common.Address, _voterManagerAddress common.Address) (*types.Transaction, error) {
+	return _NetworkProposal.Contract.Init(&_NetworkProposal.TransactOpts, _voters, _initialThreshold, _adminAddress, _voterManagerAddress)
 }
 
-// Init is a paid mutator transaction binding the contract method 0xba50db3b.
+// Init is a paid mutator transaction binding the contract method 0x6d844b5c.
 //
-// Solidity: function init(address[] _voters, uint256 _initialThreshold, address _adminAddress) returns()
-func (_NetworkProposal *NetworkProposalTransactorSession) Init(_voters []common.Address, _initialThreshold *big.Int, _adminAddress common.Address) (*types.Transaction, error) {
-	return _NetworkProposal.Contract.Init(&_NetworkProposal.TransactOpts, _voters, _initialThreshold, _adminAddress)
+// Solidity: function init(address[] _voters, uint256 _initialThreshold, address _adminAddress, address _voterManagerAddress) returns()
+func (_NetworkProposal *NetworkProposalTransactorSession) Init(_voters []common.Address, _initialThreshold *big.Int, _adminAddress common.Address, _voterManagerAddress common.Address) (*types.Transaction, error) {
+	return _NetworkProposal.Contract.Init(&_NetworkProposal.TransactOpts, _voters, _initialThreshold, _adminAddress, _voterManagerAddress)
 }
 
 // Reinit is a paid mutator transaction binding the contract method 0xc482ceaf.
@@ -624,6 +656,48 @@ func (_NetworkProposal *NetworkProposalTransactorSession) RemoveVoter(_voter com
 	return _NetworkProposal.Contract.RemoveVoter(&_NetworkProposal.TransactOpts, _voter)
 }
 
+// ReplaceVoters is a paid mutator transaction binding the contract method 0x02126d4a.
+//
+// Solidity: function replaceVoters(address[] _newVoters, uint256 _threshold) returns()
+func (_NetworkProposal *NetworkProposalTransactor) ReplaceVoters(opts *bind.TransactOpts, _newVoters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _NetworkProposal.contract.Transact(opts, "replaceVoters", _newVoters, _threshold)
+}
+
+// ReplaceVoters is a paid mutator transaction binding the contract method 0x02126d4a.
+//
+// Solidity: function replaceVoters(address[] _newVoters, uint256 _threshold) returns()
+func (_NetworkProposal *NetworkProposalSession) ReplaceVoters(_newVoters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _NetworkProposal.Contract.ReplaceVoters(&_NetworkProposal.TransactOpts, _newVoters, _threshold)
+}
+
+// ReplaceVoters is a paid mutator transaction binding the contract method 0x02126d4a.
+//
+// Solidity: function replaceVoters(address[] _newVoters, uint256 _threshold) returns()
+func (_NetworkProposal *NetworkProposalTransactorSession) ReplaceVoters(_newVoters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _NetworkProposal.Contract.ReplaceVoters(&_NetworkProposal.TransactOpts, _newVoters, _threshold)
+}
+
+// TakeoverVoterManagement is a paid mutator transaction binding the contract method 0x07ed5464.
+//
+// Solidity: function takeoverVoterManagement(address _newVoterManager, address[] _newVoters, uint256 _threshold) returns()
+func (_NetworkProposal *NetworkProposalTransactor) TakeoverVoterManagement(opts *bind.TransactOpts, _newVoterManager common.Address, _newVoters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _NetworkProposal.contract.Transact(opts, "takeoverVoterManagement", _newVoterManager, _newVoters, _threshold)
+}
+
+// TakeoverVoterManagement is a paid mutator transaction binding the contract method 0x07ed5464.
+//
+// Solidity: function takeoverVoterManagement(address _newVoterManager, address[] _newVoters, uint256 _threshold) returns()
+func (_NetworkProposal *NetworkProposalSession) TakeoverVoterManagement(_newVoterManager common.Address, _newVoters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _NetworkProposal.Contract.TakeoverVoterManagement(&_NetworkProposal.TransactOpts, _newVoterManager, _newVoters, _threshold)
+}
+
+// TakeoverVoterManagement is a paid mutator transaction binding the contract method 0x07ed5464.
+//
+// Solidity: function takeoverVoterManagement(address _newVoterManager, address[] _newVoters, uint256 _threshold) returns()
+func (_NetworkProposal *NetworkProposalTransactorSession) TakeoverVoterManagement(_newVoterManager common.Address, _newVoters []common.Address, _threshold *big.Int) (*types.Transaction, error) {
+	return _NetworkProposal.Contract.TakeoverVoterManagement(&_NetworkProposal.TransactOpts, _newVoterManager, _newVoters, _threshold)
+}
+
 // TransferAdmin is a paid mutator transaction binding the contract method 0x75829def.
 //
 // Solidity: function transferAdmin(address _newAdmin) returns()
@@ -643,6 +717,27 @@ func (_NetworkProposal *NetworkProposalSession) TransferAdmin(_newAdmin common.A
 // Solidity: function transferAdmin(address _newAdmin) returns()
 func (_NetworkProposal *NetworkProposalTransactorSession) TransferAdmin(_newAdmin common.Address) (*types.Transaction, error) {
 	return _NetworkProposal.Contract.TransferAdmin(&_NetworkProposal.TransactOpts, _newAdmin)
+}
+
+// TransferVoterManager is a paid mutator transaction binding the contract method 0xb88c35be.
+//
+// Solidity: function transferVoterManager(address _newVoterManager) returns()
+func (_NetworkProposal *NetworkProposalTransactor) TransferVoterManager(opts *bind.TransactOpts, _newVoterManager common.Address) (*types.Transaction, error) {
+	return _NetworkProposal.contract.Transact(opts, "transferVoterManager", _newVoterManager)
+}
+
+// TransferVoterManager is a paid mutator transaction binding the contract method 0xb88c35be.
+//
+// Solidity: function transferVoterManager(address _newVoterManager) returns()
+func (_NetworkProposal *NetworkProposalSession) TransferVoterManager(_newVoterManager common.Address) (*types.Transaction, error) {
+	return _NetworkProposal.Contract.TransferVoterManager(&_NetworkProposal.TransactOpts, _newVoterManager)
+}
+
+// TransferVoterManager is a paid mutator transaction binding the contract method 0xb88c35be.
+//
+// Solidity: function transferVoterManager(address _newVoterManager) returns()
+func (_NetworkProposal *NetworkProposalTransactorSession) TransferVoterManager(_newVoterManager common.Address) (*types.Transaction, error) {
+	return _NetworkProposal.Contract.TransferVoterManager(&_NetworkProposal.TransactOpts, _newVoterManager)
 }
 
 // UpgradeTo is a paid mutator transaction binding the contract method 0x3659cfe6.
@@ -1527,6 +1622,159 @@ func (_NetworkProposal *NetworkProposalFilterer) WatchVoteProposal(opts *bind.Wa
 func (_NetworkProposal *NetworkProposalFilterer) ParseVoteProposal(log types.Log) (*NetworkProposalVoteProposal, error) {
 	event := new(NetworkProposalVoteProposal)
 	if err := _NetworkProposal.contract.UnpackLog(event, "VoteProposal", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// NetworkProposalVoterManagementTakenOverIterator is returned from FilterVoterManagementTakenOver and is used to iterate over the raw logs and unpacked data for VoterManagementTakenOver events raised by the NetworkProposal contract.
+type NetworkProposalVoterManagementTakenOverIterator struct {
+	Event *NetworkProposalVoterManagementTakenOver // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *NetworkProposalVoterManagementTakenOverIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(NetworkProposalVoterManagementTakenOver)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(NetworkProposalVoterManagementTakenOver)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *NetworkProposalVoterManagementTakenOverIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *NetworkProposalVoterManagementTakenOverIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// NetworkProposalVoterManagementTakenOver represents a VoterManagementTakenOver event raised by the NetworkProposal contract.
+type NetworkProposalVoterManagementTakenOver struct {
+	OldManager common.Address
+	NewManager common.Address
+	Raw        types.Log // Blockchain specific contextual infos
+}
+
+// FilterVoterManagementTakenOver is a free log retrieval operation binding the contract event 0x77cc016861b4e095bccd1c6d24dce5f502f9906d955ddb2b96fb9ea44be9f8a7.
+//
+// Solidity: event VoterManagementTakenOver(address indexed _oldManager, address indexed _newManager)
+func (_NetworkProposal *NetworkProposalFilterer) FilterVoterManagementTakenOver(opts *bind.FilterOpts, _oldManager []common.Address, _newManager []common.Address) (*NetworkProposalVoterManagementTakenOverIterator, error) {
+
+	var _oldManagerRule []interface{}
+	for _, _oldManagerItem := range _oldManager {
+		_oldManagerRule = append(_oldManagerRule, _oldManagerItem)
+	}
+	var _newManagerRule []interface{}
+	for _, _newManagerItem := range _newManager {
+		_newManagerRule = append(_newManagerRule, _newManagerItem)
+	}
+
+	logs, sub, err := _NetworkProposal.contract.FilterLogs(opts, "VoterManagementTakenOver", _oldManagerRule, _newManagerRule)
+	if err != nil {
+		return nil, err
+	}
+	return &NetworkProposalVoterManagementTakenOverIterator{contract: _NetworkProposal.contract, event: "VoterManagementTakenOver", logs: logs, sub: sub}, nil
+}
+
+// WatchVoterManagementTakenOver is a free log subscription operation binding the contract event 0x77cc016861b4e095bccd1c6d24dce5f502f9906d955ddb2b96fb9ea44be9f8a7.
+//
+// Solidity: event VoterManagementTakenOver(address indexed _oldManager, address indexed _newManager)
+func (_NetworkProposal *NetworkProposalFilterer) WatchVoterManagementTakenOver(opts *bind.WatchOpts, sink chan<- *NetworkProposalVoterManagementTakenOver, _oldManager []common.Address, _newManager []common.Address) (event.Subscription, error) {
+
+	var _oldManagerRule []interface{}
+	for _, _oldManagerItem := range _oldManager {
+		_oldManagerRule = append(_oldManagerRule, _oldManagerItem)
+	}
+	var _newManagerRule []interface{}
+	for _, _newManagerItem := range _newManager {
+		_newManagerRule = append(_newManagerRule, _newManagerItem)
+	}
+
+	logs, sub, err := _NetworkProposal.contract.WatchLogs(opts, "VoterManagementTakenOver", _oldManagerRule, _newManagerRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(NetworkProposalVoterManagementTakenOver)
+				if err := _NetworkProposal.contract.UnpackLog(event, "VoterManagementTakenOver", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseVoterManagementTakenOver is a log parse operation binding the contract event 0x77cc016861b4e095bccd1c6d24dce5f502f9906d955ddb2b96fb9ea44be9f8a7.
+//
+// Solidity: event VoterManagementTakenOver(address indexed _oldManager, address indexed _newManager)
+func (_NetworkProposal *NetworkProposalFilterer) ParseVoterManagementTakenOver(log types.Log) (*NetworkProposalVoterManagementTakenOver, error) {
+	event := new(NetworkProposalVoterManagementTakenOver)
+	if err := _NetworkProposal.contract.UnpackLog(event, "VoterManagementTakenOver", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

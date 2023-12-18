@@ -326,7 +326,7 @@ func (task *Task) Start() error {
 		if !bytes.Equal(task.eth2Config.GenesisForkVersion, params.HoleskyConfig().GenesisForkVersion) {
 			return fmt.Errorf("endpoint network not match")
 		}
-		task.dealtEth1Block = 9403883
+		task.dealtEth1Block = 549480
 		task.ssvApiNetwork = "holesky"
 	case 5: // goerli
 		task.chain = constants.GetChain(constants.ChainGOERLI)
