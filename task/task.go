@@ -11,6 +11,7 @@ import (
 	"sync"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/forta-network/go-multicall"
@@ -48,12 +49,7 @@ var (
 	blocksOfOneYear = decimal.NewFromInt(2629800)
 )
 
-const minNumberOfTargetOperators = 10
-
-var (
-	devPostUptimeUrl     = "https://test-drop-api.stafi.io/reth/v1/uploadEjectorUptime"
-	mainnetPostUptimeUrl = "https://drop-api.stafi.io/reth/v1/uploadEjectorUptime"
-)
+const minNumberOfTargetOperators = 4
 
 var (
 	domainVoluntaryExit  = bytesutil.Uint32ToBytes4(0x04000000)
@@ -359,6 +355,11 @@ func (task *Task) Start() error {
 	}
 	task.multicaler = caller
 
+	latestBlockNumber, err := task.connectionOfTrustNodeAccount.Eth1LatestBlock()
+	if err != nil {
+		return err
+	}
+
 	// check target operator id
 	notActiveOperators := make([]uint64, 0)
 	for _, opId := range task.targetOperatorIds {
@@ -385,11 +386,16 @@ func (task *Task) Start() error {
 		}
 
 		// fetch pubkey
-		operatorAddedEvent, err := task.ssvNetworkContract.FilterOperatorAdded(nil, []uint64{opId}, []common.Address{owner})
+		operatorAddedEvent, err := task.loadOperatorAddedEvent(opId, owner, latestBlockNumber)
+		// operatorAddedEvent, err := task.ssvNetworkContract.FilterOperatorAdded(&bind.FilterOpts{
+		// 	Start:   181612,
+		// 	End:     nil,
+		// 	Context: context.Background(),
+		// }, []uint64{opId}, []common.Address{owner})
 		if err != nil {
-			return errors.Wrapf(err, "ssvNetworkContract.FilterOperatorAdded failed, opId %d owner %s", opId, owner.String())
+			return err
 		}
-		if !operatorAddedEvent.Next() {
+		if operatorAddedEvent == nil {
 			return fmt.Errorf("filter operator pubkey failed, opId %d owner %s", opId, owner.String())
 		}
 		pubkey, err := unpackOperatorPublicKey(operatorAddedEvent.Event.PublicKey)
@@ -476,6 +482,33 @@ func (task *Task) Start() error {
 
 func (task *Task) Stop() {
 	close(task.stop)
+}
+
+func (task *Task) loadOperatorAddedEvent(opId uint64, owner common.Address, endBlock uint64) (*ssv_network.SsvNetworkOperatorAddedIterator, error) {
+	var start uint64 = 180000
+	for start <= endBlock {
+		end := start + 1000
+		if end > endBlock {
+			end = endBlock
+		}
+		if start > endBlock {
+			break
+		}
+
+		operatorAddedEvent, err := task.ssvNetworkContract.FilterOperatorAdded(&bind.FilterOpts{
+			Start:   start,
+			End:     &end,
+			Context: context.Background(),
+		}, []uint64{opId}, []common.Address{owner})
+		if err != nil {
+			return nil, errors.Wrapf(err, "ssvNetworkContract.FilterOperatorAdded failed, opId %d owner %s", opId, owner.String())
+		}
+		if operatorAddedEvent.Next() {
+			return operatorAddedEvent, nil
+		}
+		start = end + 1
+	}
+	return nil, fmt.Errorf("filter operator pubkey failed, opId %d owner %s", opId, owner.String())
 }
 
 func (task *Task) initContract() error {

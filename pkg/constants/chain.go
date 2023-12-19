@@ -30,6 +30,7 @@ var NetworkNames = []NetworkName{
 var chains = map[NetworkName]Chain{
 	ChainMAINNET:  newChain(ChainMAINNET, "00000000", "4b363db94e286120d76eb905340fdd4e54bfe9f06bf33ff6cf5ad27f511bfe95"),
 	ChainGOERLI:   newChain(ChainGOERLI, "00001020", "043db0d9a83813551ee2f33450d23797757d430911a9320530ad8a0eabc43efb"),
+	ChainHOLESKY:  newChain(ChainHOLESKY, "01017000", "9143aa7c615a7f7115e2b6aac319c03529df8242ae705fba9df39b79c59fa8b1"),
 	ChainSEPOLIA:  newChain(ChainSEPOLIA, "90000069", "d8ea171f3c94aea21ebc42a1ed61052acf3f9209c00e4efbaaddac09ed9b8078"),
 	ChainZHEJIANG: newChain(ChainZHEJIANG, "00000069", "53a92d8f2bb1d85f62d16a156e6ebcd1bcaba652d0900b2c2f387826f3481f6f"),
 }

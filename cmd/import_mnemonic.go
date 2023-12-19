@@ -109,7 +109,12 @@ func loadSeed(keypath string) ([]byte, error) {
 		return nil, fmt.Errorf("key file not found: %s", path)
 	}
 
-	pswd := keystore.GetPassword(fmt.Sprintf("Enter password for key %s:", path))
+	var pswd []byte
+	if pswdStr := os.Getenv("SSV_" + keystore.EnvPassword); pswdStr != "" {
+		pswd = []byte(pswdStr)
+	} else {
+		pswd = keystore.GetPassword(fmt.Sprintf("Enter password for key %s:", path))
+	}
 
 	return ReadFromFileAndDecrypt(path, pswd)
 }
