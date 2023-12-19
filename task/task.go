@@ -487,7 +487,7 @@ func (task *Task) Stop() {
 func (task *Task) loadOperatorAddedEvent(opId uint64, owner common.Address, endBlock uint64) (*ssv_network.SsvNetworkOperatorAddedIterator, error) {
 	var start uint64 = 180000
 	for start <= endBlock {
-		end := start + 1000
+		end := start + fetchEventBlockLimit
 		if end > endBlock {
 			end = endBlock
 		}

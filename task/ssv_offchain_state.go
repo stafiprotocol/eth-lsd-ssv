@@ -21,7 +21,8 @@ import (
 
 const (
 	// todo: automatically detect event fetch limit from target rpc
-	fetchEventBlockLimit      = uint64(4900) * 7
+	fetchEventBlockLimit = uint64(3000)
+	// fetchEventBlockLimit      = uint64(4900) * 7
 	fetchEth1WaitBlockNumbers = uint64(2)
 
 	eventNameValidatorAdded             = "ValidatorAdded"             // 'ValidatorAdded',
