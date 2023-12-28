@@ -360,6 +360,10 @@ func (task *Task) Start() error {
 		return err
 	}
 
+	if err = task.checkTrustNode(); err != nil {
+		return err
+	}
+
 	// check target operator id
 	notActiveOperators := make([]uint64, 0)
 	for _, opId := range task.targetOperatorIds {
@@ -562,6 +566,31 @@ func (task *Task) initContract() error {
 		return err
 	}
 	return nil
+}
+
+// check whether node is in trust nodes or not
+func (task *Task) checkTrustNode() error {
+	len, err := task.nodeDepositContract.GetNodesLength(nil)
+	if err != nil {
+		return err
+	}
+	if len.Uint64() == 0 {
+		return fmt.Errorf("the network has not config trust node")
+	}
+
+	nodes, err := task.nodeDepositContract.GetNodes(nil, big.NewInt(0), len)
+	if err != nil {
+		return fmt.Errorf("fail to get trust nodes: %w", err)
+	}
+
+	for _, n := range nodes {
+		if n.String() == task.trustNodeKeyPair.Address() {
+			// found trust node
+			return nil
+		}
+	}
+
+	return fmt.Errorf("address: %s is not a trust node", task.trustNodeKeyPair.Address())
 }
 
 func (task *Task) appendHandlers(handlers ...func() error) {
