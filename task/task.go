@@ -568,29 +568,20 @@ func (task *Task) initContract() error {
 	return nil
 }
 
-// check whether node is in trust nodes or not
+// check whether node is a member of trust nodes or not
 func (task *Task) checkTrustNode() error {
-	len, err := task.nodeDepositContract.GetNodesLength(nil)
+	addr := task.trustNodeKeyPair.CommonAddress()
+	info, err := task.nodeDepositContract.NodeInfoOf(nil, addr)
 	if err != nil {
-		return err
+		return fmt.Errorf("fail to get info of node: %s err: %w", addr, err)
 	}
-	if len.Uint64() == 0 {
-		return fmt.Errorf("the network has not config trust node")
+	if info.NodeType != 2 {
+		return fmt.Errorf("address: %s has not been registered as a trust node", addr)
 	}
-
-	nodes, err := task.nodeDepositContract.GetNodes(nil, big.NewInt(0), len)
-	if err != nil {
-		return fmt.Errorf("fail to get trust nodes: %w", err)
+	if info.Removed {
+		return fmt.Errorf("address: %s has been removed from trust nodes", addr)
 	}
-
-	for _, n := range nodes {
-		if n.String() == task.trustNodeKeyPair.Address() {
-			// found trust node
-			return nil
-		}
-	}
-
-	return fmt.Errorf("address: %s is not a trust node", task.trustNodeKeyPair.Address())
+	return nil
 }
 
 func (task *Task) appendHandlers(handlers ...func() error) {
