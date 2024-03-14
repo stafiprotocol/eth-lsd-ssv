@@ -257,13 +257,8 @@ func (task *Task) updateCluster(operatorIds []uint64, newCluster *ssv_network.IS
 
 		for _, opId := range operatorIds {
 			if _, exist := task.targetOperators[opId]; !exist {
-				owner, fee, validatorCount, _, _, _, err := task.ssvNetworkViewsContract.GetOperatorById(nil, opId)
-				if err != nil {
-					return errors.Wrap(err, "ssvNetworkViewsContract.GetOperatorById failed")
-				}
-
 				// fetch active status from api
-				operatorFromApi, err := task.mustGetOperatorDetail(task.ssvApiNetwork, opId)
+				operatorFromApi, err := utils.MustGetOperatorDetail(task.ssvApiNetwork, opId)
 				if err != nil {
 					return err
 				}
@@ -272,6 +267,18 @@ func (task *Task) updateCluster(operatorIds []uint64, newCluster *ssv_network.IS
 					isActive = true
 				}
 
+				if !isActive {
+					task.targetOperators[opId] = &keyshare.Operator{
+						Id:     opId,
+						Active: isActive,
+					}
+					continue
+				}
+
+				owner, fee, validatorCount, _, _, _, err := task.ssvNetworkViewsContract.GetOperatorById(nil, opId)
+				if err != nil {
+					return errors.Wrap(err, "ssvNetworkViewsContract.GetOperatorById failed")
+				}
 				// fetch pubkey
 				operatorAddedEvent, err := task.ssvNetworkContract.FilterOperatorAdded(nil, []uint64{opId}, []common.Address{owner})
 				if err != nil {

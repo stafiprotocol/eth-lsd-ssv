@@ -380,7 +380,7 @@ func (task *Task) Start() error {
 		}
 
 		// fetch and check acitve status from api
-		operatorFromApi, err := task.mustGetOperatorDetail(task.ssvApiNetwork, opId)
+		operatorFromApi, err := utils.MustGetOperatorDetail(task.ssvApiNetwork, opId)
 		if err != nil {
 			return err
 		}
