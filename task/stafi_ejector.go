@@ -5,6 +5,7 @@ import (
 	"math/big"
 
 	"github.com/pkg/errors"
+	"github.com/prysmaticlabs/prysm/v4/config/params"
 	"github.com/prysmaticlabs/prysm/v4/beacon-chain/core/signing"
 	primTypes "github.com/prysmaticlabs/prysm/v4/consensus-types/primitives"
 	"github.com/prysmaticlabs/prysm/v4/crypto/bls"
@@ -81,11 +82,18 @@ func (task *Task) checkCycle(cycle int64) error {
 		// will sign and broadcast exit msg
 		exit := &ethpb.VoluntaryExit{Epoch: currentEpoch, ValidatorIndex: primTypes.ValidatorIndex(validator.validatorIndex)}
 
-		domain, err := task.connectionOfTrustNodeAccount.Eth2Client().GetDomainData(domainVoluntaryExit[:], uint64(exit.Epoch))
-		if err != nil {
-			return errors.Wrap(err, "Get domainData failed")
+		fork := &ethpb.Fork{
+			PreviousVersion: params.BeaconConfig().CapellaForkVersion,
+			CurrentVersion:  params.BeaconConfig().CapellaForkVersion,
+			Epoch:           params.BeaconConfig().CapellaForkEpoch,
 		}
-		exitRoot, err := signing.ComputeSigningRoot(exit, domain)
+
+		signatureDomain, err := signing.Domain(fork, exit.Epoch, domainVoluntaryExit, task.eth2Config.GenesisValidatorsRoot)
+		if err != nil {
+			return errors.Wrap(err, "failed to compute signature domain")
+		}
+
+		exitRoot, err := signing.ComputeSigningRoot(exit, signatureDomain)
 		if err != nil {
 			return errors.Wrap(err, "ComputeSigningRoot failed")
 		}
