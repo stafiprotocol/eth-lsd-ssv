@@ -42,6 +42,12 @@ func Load(configFilePath string) (*Config, error) {
 	if len(cfg.LogFilePath) == 0 {
 		cfg.LogFilePath = "./log_data"
 	}
+	if cfg.GasLimit == "" {
+		cfg.GasLimit = "3000000"
+	}
+	if cfg.MaxGasPrice == "" {
+		cfg.MaxGasPrice = "600000000000"
+	}
 
 	return &cfg, nil
 }

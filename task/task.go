@@ -205,7 +205,7 @@ func NewTask(cfg *config.Config, seed []byte, isViewMode bool, trustNodeKeyPair,
 
 	gasLimitDeci, err := decimal.NewFromString(cfg.GasLimit)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("parse config gasLimit error: %w", err)
 	}
 
 	if gasLimitDeci.LessThanOrEqual(decimal.Zero) {
@@ -222,7 +222,7 @@ func NewTask(cfg *config.Config, seed []byte, isViewMode bool, trustNodeKeyPair,
 
 	maxGasPriceDeci, err := decimal.NewFromString(cfg.MaxGasPrice)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("parse config maxGasPrice error: %w", err)
 	}
 	if maxGasPriceDeci.LessThanOrEqual(decimal.Zero) {
 		return nil, fmt.Errorf("max gas price is zero")
